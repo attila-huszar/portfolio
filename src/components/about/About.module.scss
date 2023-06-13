@@ -1,0 +1,14 @@
+@import "../../variables.modules";
+
+.green {
+  color: $green;
+}
+ul {
+  margin-bottom: 25px;
+}
+.skills {
+  columns: 1;
+  @media only screen and (min-width: 940px) {
+    columns: 2;
+  }
+}
