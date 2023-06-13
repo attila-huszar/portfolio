@@ -26,7 +26,7 @@ export const info = {
   ],
   socials: [
     {
-      link: "http://localhost:3000/Attila_Huszar_CV.pdf",
+      link: "https://attila-huszar.netlify.app/Attila_Huszar_CV.pdf",
       icon: "fa fa-file-text",
       label: "Resume",
     },
@@ -80,9 +80,9 @@ export const info = {
   portfolio: [
     {
       title: "Portfolio site",
-      live: null,
-      source: "https://github.com/",
-      image: "url",
+      live: "https://attila-huszar.netlify.app/",
+      source: "https://github.com/attila-huszar/portfolio/",
+      image: "https://attila-huszar.netlify.app/website.jpg",
     },
   ],
 };
