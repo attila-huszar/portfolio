@@ -82,7 +82,7 @@ export const info = {
       title: "Portfolio site",
       live: "https://attila-huszar.netlify.app/",
       source: "https://github.com/attila-huszar/portfolio/",
-      image: "https://attila-huszar.netlify.app/website.jpg",
+      image: "https://attila-huszar.netlify.app/portfolio.jpg",
     },
   ],
 };
