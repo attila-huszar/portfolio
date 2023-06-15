@@ -41,7 +41,7 @@ export const info = {
       label: "LinkedIn",
     },
   ],
-  bio: "Hello! I'm Attila Huszár. I studied software development at Green Fox Academy, I enjoy building web applications and learning new technologies. I love to travel and explore new places. I'm currently based in Budapest, Hungary.",
+  bio: "Greetings! I am Attila Huszár. My educational background includes studying software development at Green Fox Academy Budapest. I take great pleasure in constructing web applications and expanding my knowledge of emerging technologies. Furthermore, I have a strong passion for discovering new places and going on exciting travel adventures.",
   skills: {
     languages: ["JavaScript", "TypeScript", "HTML/CSS"],
     frameworks: ["React", "Node.js", "Express", "Material UI", "Sass"],
