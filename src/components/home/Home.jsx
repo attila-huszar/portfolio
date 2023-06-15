@@ -21,16 +21,18 @@ export default function Home() {
       minHeight={"calc(100vh - 175px)"}>
       <Box
         className={classNames(Style.avatar, Style.shadowed)}
-        alt={"image of developer"}
-        style={{ background: info.gradient, objectFit: "cover" }}
         component={"img"}
         src={selfPortrait}
+        alt={"image of developer"}
+        style={{
+          background: info.gradient,
+          borderRadius: "50%",
+          padding: "0.75rem",
+          objectFit: "cover",
+        }}
         width={{ xs: "35vh", md: "40vh" }}
         height={{ xs: "35vh", md: "40vh" }}
-        borderRadius={"50%"}
-        p={"0.75rem"}
-        mb={{ xs: "1rem", sm: 0 }}
-        mr={{ xs: 0, md: "2rem" }}
+        mr={{ xs: 0, md: "50px" }}
       />
       <Box
         style={{

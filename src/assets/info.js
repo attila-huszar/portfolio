@@ -9,7 +9,7 @@ export const info = {
   baseColor: colors[0],
   miniBio: [
     {
-      emoji: " 🇪🇺",
+      emoji: "🇪🇺",
       text: "based in Budapest, Hungary",
       url: "",
     },
@@ -19,7 +19,7 @@ export const info = {
     //   url: "",
     // },
     {
-      emoji: "📧",
+      emoji: "✉️",
       text: "attila.huszar@outlook.com",
       url: "mailto:attila.huszar@outlook.com?subject=Let's work on something together!",
     },
@@ -41,11 +41,11 @@ export const info = {
       label: "LinkedIn",
     },
   ],
-  bio: "Hello! I'm Attila Huszár. I'm a Full Stack Developer. I studied web development at Green Fox Academy, I enjoy building web applications and learning new technologies. I love to travel and explore new places. I'm currently based in Budapest, Hungary. (Willing to relocate!)",
+  bio: "Hello! I'm Attila Huszár. I studied software development at Green Fox Academy, I enjoy building web applications and learning new technologies. I love to travel and explore new places. I'm currently based in Budapest, Hungary.",
   skills: {
     languages: ["JavaScript", "TypeScript", "HTML/CSS"],
-    frameworks: ["React", "Material UI", "Node.js", "Express"],
-    databases: ["MySQl", "Sequelize "],
+    frameworks: ["React", "Node.js", "Express", "Material UI", "Sass"],
+    databases: ["MySQl", "Sequelize"],
     // cloudServices: [
     //   "AWS S3",
     //   "AWS EC2",
@@ -53,33 +53,32 @@ export const info = {
     //   "Heroku",
     //   "Netlify",
     // ],
-    tools: ["Git", "Postman", "npm", "Jira", "Google Analytics"],
+    tools: [
+      "Git",
+      "Postman",
+      "npm",
+      "Jira",
+      "Google Analytics",
+      "Graphic design",
+    ],
   },
   hobbies: [
     {
-      label: "Photography",
-      emoji: "📷",
+      label: "Cycling",
+      emoji: "🚴",
     },
     {
-      label: "Video Games",
-      emoji: "🎮",
-    },
-    {
-      label: "Guitar",
-      emoji: "🎸",
+      label: "Food saving",
+      emoji: "🍲",
     },
     {
       label: "Traveling",
       emoji: "✈️",
     },
-    {
-      label: "Fishing",
-      emoji: "🎣",
-    },
   ],
   portfolio: [
     {
-      title: "Portfolio site",
+      title: "Portfolio",
       live: "https://attila-huszar.netlify.app/",
       source: "https://github.com/attila-huszar/portfolio/",
       image: "https://attila-huszar.netlify.app/portfolio.jpg",

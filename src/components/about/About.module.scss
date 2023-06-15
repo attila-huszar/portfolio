@@ -3,12 +3,15 @@
 .green {
   color: $green;
 }
+
 ul {
   margin-bottom: 25px;
 }
+
 .skills {
-  columns: 1;
-  @media only screen and (min-width: 940px) {
-    columns: 2;
+  columns: 2;
+
+  @media only screen and (max-width: 900px) {
+    columns: 1;
   }
 }

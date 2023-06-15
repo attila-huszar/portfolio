@@ -1,24 +1,33 @@
 @import "../../variables.modules";
 
+.avatar {
+  @media only screen and (max-width: 900px) {
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+}
+
 h1 {
-  font-size: 2rem;
-  text-align: center;
-  @media only screen and (min-width: 940px) {
-    font-size: 3rem;
-    text-align: left;
+  font-size: 3rem;
+  text-align: left;
+
+  @media only screen and (max-width: 900px) {
+    font-size: 2rem;
+    text-align: center;
   }
 }
 
 h2 {
-  font-size: 1.25rem;
-  text-align: center;
-  @media only screen and (min-width: 940px) {
-    font-size: 2rem;
-    text-align: left;
+  font-size: 2rem;
+  text-align: left;
+
+  @media only screen and (max-width: 900px) {
+    font-size: 1.25rem;
+    text-align: center;
   }
 }
 
-i:hover {
+a > i:hover {
   color: $purple;
   transition: color 400ms ease;
 }

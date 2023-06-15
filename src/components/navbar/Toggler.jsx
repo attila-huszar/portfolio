@@ -31,7 +31,7 @@ export default function Toggler() {
       },
     },
     "& .MuiSwitch-thumb": {
-      backgroundColor: isDarkMode ? "#003892" : "#001e3c",
+      backgroundColor: isDarkMode ? "#003892" : "#8d53ff",
       width: 32,
       height: 32,
       "&:before": {

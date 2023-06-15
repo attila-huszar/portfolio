@@ -38,6 +38,9 @@ export default function Navbar() {
         backdropFilter: "blur(8px)",
         WebkitBackdropFilter: "blur(8px)",
         transition: "all 0.4s ease",
+        background: isDarkMode
+          ? "rgba(0, 0, 0, 0.2)"
+          : "rgba(255, 255, 255, 0.2)",
       }}
       component={"ul"}
       gap={{ xs: "2rem", md: "8rem" }}>
@@ -45,7 +48,7 @@ export default function Navbar() {
         <li key={i}>
           <NavLink
             to={link.to}
-            style={{ padding: "15px 12px" }}
+            style={{ padding: "15px 0" }}
             className={({ isActive }) => (isActive ? Style.active : "")}>
             {link.name}
           </NavLink>
