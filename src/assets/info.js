@@ -44,7 +44,14 @@ export const info = {
   bio: "Greetings! I am Attila Huszár. My educational background includes studying software development at Green Fox Academy Budapest. I take great pleasure in constructing web applications and expanding my knowledge of emerging technologies. Furthermore, I have a strong passion for discovering new places and going on exciting travel adventures.",
   skills: {
     languages: ["JavaScript", "TypeScript", "HTML/CSS"],
-    frameworks: ["React", "Node.js", "Express", "Material UI", "Sass"],
+    frameworks: [
+      "React",
+      "Node.js",
+      "Express",
+      "Material UI",
+      "Sass",
+      "Tailwind",
+    ],
     databases: ["MySQl", "Sequelize"],
     // cloudServices: [
     //   "AWS S3",
@@ -55,9 +62,11 @@ export const info = {
     // ],
     tools: [
       "Git",
+      "CI/CD",
       "Postman",
       "npm",
       "Jira",
+      "SEO",
       "Google Analytics",
       "Graphic design",
     ],
@@ -82,6 +91,12 @@ export const info = {
       live: "https://attila-huszar.netlify.app/",
       source: "https://github.com/attila-huszar/portfolio/",
       image: "https://attila-huszar.netlify.app/portfolio.jpg",
+    },
+    {
+      title: "Full Stack School Project",
+      live: "",
+      source: "https://github.com/attila-huszar/fox-ticket-react/",
+      image: "https://attila-huszar.netlify.app/fox-ticket-react.jpg",
     },
   ],
 };
