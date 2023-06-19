@@ -9,7 +9,6 @@ export default function ParticlesBg({ darkMode }) {
   }, []);
 
   const { background, links, particle } = particleBgColors();
-
   const [backgroundColor, setBgColor] = useState(background(darkMode));
   const [particleColor, setParticleColor] = useState(particle(darkMode));
   const [linksColor, setLinksColor] = useState(links(darkMode));
@@ -18,7 +17,7 @@ export default function ParticlesBg({ darkMode }) {
     setBgColor(background(darkMode));
     setParticleColor(particle(darkMode));
     setLinksColor(links(darkMode));
-  }, [darkMode, background, links, particle]);
+  }, [darkMode]);
 
   return (
     <Particles

@@ -27,19 +27,19 @@ export default function About() {
     );
   }
 
-  const skillsSection = skill => {
+  const skillsSection = (skill, i) => {
     const keys = Object.keys(skill)[0];
     const values = skill[keys];
 
     return (
-      <>
+      <div key={i}>
         <p style={{ color: info.baseColor }}>{keys}</p>
         <ul className={Style.skills}>
           {values.map((skill, i) => (
             <li key={i}>{skill}</li>
           ))}
         </ul>
-      </>
+      </div>
     );
   };
 
@@ -58,8 +58,8 @@ export default function About() {
           </span>{" "}
           ls
         </p>
-        {Object.keys(info.skills).map(e => {
-          return skillsSection({ [e]: info.skills[e] });
+        {Object.keys(info.skills).map((e, i) => {
+          return skillsSection({ [e]: info.skills[e] }, i);
         })}
       </>
     );

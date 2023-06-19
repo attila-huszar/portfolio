@@ -6,7 +6,16 @@ import { useDarkMode } from "usehooks-ts";
 export default function Toggler() {
   const { isDarkMode, toggle } = useDarkMode();
 
-  //logGa('dark_mode_toggle', oppositeOfCurrentDarkMode ? 'dark' : 'light');
+  function themeAnalytics() {
+    gtag("event", "Darkmode toggled", {
+      time: Date.now(),
+    });
+  }
+
+  const handleChange = () => {
+    toggle();
+    themeAnalytics();
+  };
 
   const MaterialUISwitch = styled(Switch)(() => ({
     width: 62,
@@ -58,7 +67,7 @@ export default function Toggler() {
   return (
     <MaterialUISwitch
       checked={isDarkMode}
-      onChange={toggle}
+      onChange={handleChange}
       inputProps={{ "aria-label": "theme" }}
     />
   );
