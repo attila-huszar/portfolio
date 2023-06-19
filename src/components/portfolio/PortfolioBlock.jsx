@@ -6,7 +6,7 @@ import Style from "./PortfolioBlock.module.scss";
 function PortfolioBlock({ image, live, source, title }) {
   return (
     <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
-      <a href={live} target={"_blank"} rel="noopener noreferrer">
+      <a href={source} target={"_blank"} rel="noopener noreferrer">
         <Box className={Style.wrap}>
           <Box
             component={"img"}
