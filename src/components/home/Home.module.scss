@@ -29,7 +29,8 @@ h2 {
 
 a > i:hover {
   color: $purple;
-  transition: color 400ms ease;
+  transition: color 0.4s ease;
+  // animation: changeColors 10s infinite;
 }
 
 .hand {

@@ -41,7 +41,7 @@ export const info = {
       label: "LinkedIn",
     },
   ],
-  bio: "Greetings! I am Attila Huszár. My educational background includes studying software development at Green Fox Academy Budapest. I take great pleasure in constructing web applications and expanding my knowledge of emerging technologies. Furthermore, I have a strong passion for discovering new places and going on exciting travel adventures.",
+  bio: "Greetings! I'm Attila Huszár. My educational background includes studying software development at Green Fox Academy Budapest. I find the process of building web applications and continually expanding my knowledge of emerging technologies to be a thrilling and immensely rewarding journey. In addition, I have a passion for exploring new places and going on exciting travel adventures beyond the digital realm too.",
   skills: {
     languages: ["JavaScript", "TypeScript", "HTML/CSS"],
     frameworks: [
@@ -87,7 +87,7 @@ export const info = {
   ],
   portfolio: [
     {
-      title: "Portfolio",
+      title: "This site",
       live: "https://attila-huszar.netlify.app/",
       source: "https://github.com/attila-huszar/portfolio/",
       image: "https://attila-huszar.netlify.app/portfolio.jpg",

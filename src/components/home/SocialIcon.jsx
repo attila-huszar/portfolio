@@ -5,7 +5,7 @@ function SocialIcon({ link, icon, label }) {
   return (
     <Tooltip title={label} arrow>
       <a
-        target="_blank"
+        target={"_blank"}
         aria-label={label}
         rel="noopener noreferrer"
         href={link}>

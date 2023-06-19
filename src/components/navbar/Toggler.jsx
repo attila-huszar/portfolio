@@ -7,7 +7,7 @@ export default function Toggler() {
   const { isDarkMode, toggle } = useDarkMode();
 
   //logGa('dark_mode_toggle', oppositeOfCurrentDarkMode ? 'dark' : 'light');
-  
+
   const MaterialUISwitch = styled(Switch)(() => ({
     width: 62,
     height: 34,
@@ -56,6 +56,10 @@ export default function Toggler() {
   }));
 
   return (
-    <MaterialUISwitch checked={isDarkMode} onChange={toggle} color="success" />
+    <MaterialUISwitch
+      checked={isDarkMode}
+      onChange={toggle}
+      aria-label="darkmode switch"
+    />
   );
 }

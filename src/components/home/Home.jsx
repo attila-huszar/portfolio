@@ -30,8 +30,8 @@ export default function Home() {
           padding: "0.75rem",
           objectFit: "cover",
         }}
-        width={{ xs: "35vh", md: "40vh" }}
-        height={{ xs: "35vh", md: "40vh" }}
+        width={{ xs: "320px", md: "380px" }}
+        height={{ xs: "320px", md: "380px" }}
         mr={{ xs: 0, md: "50px" }}
       />
       <Box

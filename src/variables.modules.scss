@@ -1,4 +1,6 @@
 $purple: #8d53ff;
+$cyanLime: #00ffa4;
+$blue: #1d91e3;
 $pink: #ca6be6;
 $white: #f8f8f8;
 $dark: #1f1f1f;
@@ -6,6 +8,28 @@ $red: #ff6057;
 $yellow: #ffbd2e;
 $green: #27c93f;
 $lightgray: #c9c9c9;
+
+@keyframes changeColors {
+  0% {
+    color: $purple;
+  }
+  33.3% {
+    color: $blue;
+  }
+  66.6% {
+    color: $cyanLime;
+  }
+  100% {
+    color: $purple;
+  }
+}
+
+a:hover,
+a:focus {
+  color: $purple;
+  transition: color 0.4s ease;
+  // animation: changeColors 10s infinite;
+}
 
 .shadowed {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
