@@ -13,6 +13,9 @@ function PortfolioBlock({ image, live, source, title }) {
             src={image}
             alt={`Screenshot of ${title}`}
             sx={{
+              width: "350px",
+              height: "185px",
+              objectFit: "cover",
               borderRadius: "25px",
               boxShadow: "0 0.5rem 1rem rgba(0, 0, 0, 0.4)",
             }}

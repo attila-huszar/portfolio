@@ -59,7 +59,7 @@ export default function Toggler() {
     <MaterialUISwitch
       checked={isDarkMode}
       onChange={toggle}
-      aria-label="darkmode switch"
+      inputProps={{ "aria-label": "theme" }}
     />
   );
 }
