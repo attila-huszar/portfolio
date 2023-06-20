@@ -1,9 +1,12 @@
 import React from "react";
 import PortfolioBlock from "./PortfolioBlock";
-import { Box, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import { info } from "../../assets/info";
 
 export default function Portfolio() {
+  const imageWidth = 350;
+  const imageHeight = 185;
+
   return (
     <Grid container maxWidth={"1100px"} rowGap={6} margin={"100px auto 0"}>
       {info.portfolio.map((project, i) => (
@@ -13,6 +16,9 @@ export default function Portfolio() {
             live={project.live}
             source={project.source}
             image={project.image}
+            blurHash={project.blurHash}
+            width={imageWidth}
+            height={imageHeight}
           />
         </Grid>
       ))}

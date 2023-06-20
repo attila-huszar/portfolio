@@ -1,23 +1,50 @@
-import React from "react";
-import { Box } from "@mui/material";
-import { Button } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import { Box, Button } from "@mui/material";
 import Style from "./PortfolioBlock.module.scss";
+import { Canvas } from "./Canvas";
 
-function PortfolioBlock({ image, live, source, title }) {
+function PortfolioBlock({
+  image,
+  live,
+  source,
+  title,
+  blurHash,
+  width,
+  height,
+}) {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.onload = () => {
+      setImageLoaded(true);
+    };
+    img.src = image;
+  }, [image]);
+
   return (
     <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
       <a href={source} target={"_blank"} rel="noopener noreferrer">
         <Box className={Style.wrap}>
           <Box
+            sx={{
+              display: imageLoaded ? "none" : "flex",
+              width,
+              height,
+              borderRadius: "25px",
+            }}>
+            <Canvas blurHash={blurHash} width={width} height={height} />
+          </Box>
+          <Box
             component={"img"}
             src={image}
             alt={`Screenshot of ${title}`}
             sx={{
-              width: "350px",
-              height: "185px",
-              objectFit: "cover",
+              display: !imageLoaded ? "none" : "flex",
+              width,
+              height,
               borderRadius: "25px",
-              boxShadow: "0 0.5rem 1rem rgba(0, 0, 0, 0.4)",
+              objectFit: "cover",
             }}
           />
         </Box>

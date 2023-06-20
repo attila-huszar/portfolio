@@ -1,14 +1,13 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import { Box, Grid } from "@mui/material";
 import Style from "./Layout.module.scss";
 import { useDarkMode } from "usehooks-ts";
 import ParticlesBg from "./particles/ParticlesBg";
-import { Routes, Route } from "react-router-dom";
 import Navbar from "./navbar/Navbar";
 import Home from "./home/Home";
 import About from "./about/About";
 import Portfolio from "./portfolio/Portfolio";
-//import { logGa } from '../utils/log';
 
 export default function Layout() {
   const { isDarkMode } = useDarkMode();

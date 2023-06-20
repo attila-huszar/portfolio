@@ -91,12 +91,14 @@ export const info = {
       live: "https://attila-huszar.netlify.app/",
       source: "https://github.com/attila-huszar/portfolio/",
       image: "https://attila-huszar.netlify.app/portfolio.jpg",
+      blurHash: "L34.*$yF8wL}-@a+I9V:D4Vr%#tm",
     },
     {
       title: "Full Stack School Project",
       live: "",
       source: "https://github.com/attila-huszar/fox-ticket-react/",
       image: "https://attila-huszar.netlify.app/fox-ticket-react.jpg",
+      blurHash: "LPCZ9Ok?SioL~Akqg3oJVrs+t7oJ",
     },
   ],
 };

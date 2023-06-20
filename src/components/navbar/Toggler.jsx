@@ -7,7 +7,7 @@ export default function Toggler() {
   const { isDarkMode, toggle } = useDarkMode();
 
   function themeAnalytics() {
-    gtag("event", "Darkmode toggled", {
+    gtag("event", "darkmode_toggled", {
       time: Date.now(),
     });
   }

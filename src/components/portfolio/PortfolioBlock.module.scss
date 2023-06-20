@@ -1,6 +1,8 @@
 .wrap {
   position: relative;
   margin-bottom: 1rem;
+  border-radius: 25px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
 }
 
 .wrap::before {
