@@ -1,11 +1,8 @@
-import React from "react";
+import { Box } from "@mui/material";
 import Style from "./Terminal.module.scss";
 import classNames from "classnames";
-import { Box } from "@mui/material";
 
-const iconClass = "fa fa-circle";
-
-function Terminal({ text }) {
+export default function Terminal({ text }) {
   return (
     <Box
       component={"section"}
@@ -18,9 +15,9 @@ function Terminal({ text }) {
         p={"0.4rem"}
         borderRadius={"0.5rem 0.5rem 0 0"}
         fontSize={"1.2rem"}>
-        <i className={classNames(iconClass, Style.red)} />
-        <i className={classNames(iconClass, Style.amber)} />
-        <i className={classNames(iconClass, Style.green)} />
+        <i className={classNames("fa fa-circle", Style.red)} />
+        <i className={classNames("fa fa-circle", Style.amber)} />
+        <i className={classNames("fa fa-circle", Style.green)} />
       </Box>
       <Box
         py={{ xs: "1rem", md: "2rem" }}
@@ -33,5 +30,3 @@ function Terminal({ text }) {
     </Box>
   );
 }
-
-export default Terminal;

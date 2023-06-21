@@ -1,7 +1,6 @@
-import React from "react";
-import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
 import { useDarkMode } from "usehooks-ts";
+import { styled } from "@mui/material/styles";
 
 export default function Toggler() {
   const { isDarkMode, toggle } = useDarkMode();

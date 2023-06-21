@@ -1,6 +1,5 @@
-import React from "react";
-import PortfolioBlock from "./PortfolioBlock";
 import { Grid } from "@mui/material";
+import PortfolioBlock from "./PortfolioBlock";
 import { info } from "../../assets/info";
 
 export default function Portfolio() {

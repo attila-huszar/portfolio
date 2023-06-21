@@ -1,12 +1,11 @@
-import React from "react";
-import Style from "./Home.module.scss";
+import selfPortrait from "../../assets/Attila_Huszar_pic_sm-nobg.png";
+import { Box } from "@mui/material";
 import { useDarkMode } from "usehooks-ts";
 import classNames from "classnames";
+import Style from "./Home.module.scss";
 import EmojiBullet from "./EmojiBullet";
 import SocialIcon from "./SocialIcon";
-import { Box } from "@mui/material";
 import { info } from "../../assets/info";
-import selfPortrait from "../../assets/Attila_Huszar_pic_sm-nobg.png";
 
 export default function Home() {
   const { isDarkMode } = useDarkMode();

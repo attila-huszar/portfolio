@@ -1,8 +1,8 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { Box, Grid } from "@mui/material";
-import Style from "./Layout.module.scss";
 import { useDarkMode } from "usehooks-ts";
+import { useEffect } from "react";
+import Style from "./Layout.module.scss";
 import ParticlesBg from "./particles/ParticlesBg";
 import Navbar from "./navbar/Navbar";
 import Home from "./home/Home";
@@ -11,6 +11,11 @@ import Portfolio from "./portfolio/Portfolio";
 
 export default function Layout() {
   const { isDarkMode } = useDarkMode();
+  let location = useLocation();
+
+  useEffect(() => {
+    gtag("event", `page_nav_to_${location.pathname}`);
+  }, [location]);
 
   return (
     <Box className={isDarkMode ? Style.dark : Style.light}>

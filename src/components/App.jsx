@@ -1,10 +1,9 @@
-import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useDarkMode } from "usehooks-ts";
 import Layout from "./Layout";
 
-function App() {
+export default function App() {
   const { isDarkMode } = useDarkMode();
   const light = {
     palette: {
@@ -25,5 +24,3 @@ function App() {
     </ThemeProvider>
   );
 }
-
-export default App;

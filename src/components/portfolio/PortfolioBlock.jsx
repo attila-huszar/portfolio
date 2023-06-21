@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Box, Button } from "@mui/material";
 import Style from "./PortfolioBlock.module.scss";
-import { Canvas } from "./Canvas";
+import Canvas from "./Canvas";
 
-function PortfolioBlock({
+export default function PortfolioBlock({
   image,
   live,
   source,
@@ -12,14 +12,18 @@ function PortfolioBlock({
   width,
   height,
 }) {
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(() => {
+    const img = new Image();
+    img.src = image;
+    return img.complete;
+  });
 
   useEffect(() => {
     const img = new Image();
+    img.src = image;
     img.onload = () => {
       setImageLoaded(true);
     };
-    img.src = image;
   }, [image]);
 
   return (
@@ -28,10 +32,13 @@ function PortfolioBlock({
         <Box className={Style.wrap}>
           <Box
             sx={{
-              display: imageLoaded ? "none" : "flex",
               width,
               height,
+              gridRow: 1,
+              gridColumn: 1,
               borderRadius: "25px",
+              overflow: "hidden",
+              zIndex: -1,
             }}>
             <Canvas blurHash={blurHash} width={width} height={height} />
           </Box>
@@ -40,11 +47,14 @@ function PortfolioBlock({
             src={image}
             alt={`Screenshot of ${title}`}
             sx={{
-              display: !imageLoaded ? "none" : "flex",
+              opacity: imageLoaded ? 1 : 0,
               width,
               height,
+              gridRow: 1,
+              gridColumn: 1,
               borderRadius: "25px",
               objectFit: "cover",
+              transition: "opacity 0.4s ease",
             }}
           />
         </Box>
@@ -107,5 +117,3 @@ function PortfolioBlock({
     </Box>
   );
 }
-
-export default PortfolioBlock;

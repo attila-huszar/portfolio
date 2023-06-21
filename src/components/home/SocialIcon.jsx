@@ -1,7 +1,6 @@
-import React from "react";
 import Tooltip from "@mui/material/Tooltip";
 
-function SocialIcon({ link, icon, label }) {
+export default function SocialIcon({ link, icon, label }) {
   return (
     <Tooltip title={label} arrow>
       <a
@@ -14,5 +13,3 @@ function SocialIcon({ link, icon, label }) {
     </Tooltip>
   );
 }
-
-export default SocialIcon;

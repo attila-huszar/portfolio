@@ -1,7 +1,6 @@
-import React from "react";
 import { Box } from "@mui/material";
 
-function EmojiBullet({ emoji, text, url }) {
+export default function EmojiBullet({ emoji, text, url }) {
   return (
     <Box
       component={"li"}
@@ -25,5 +24,3 @@ function EmojiBullet({ emoji, text, url }) {
     </Box>
   );
 }
-
-export default EmojiBullet;

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { decodeBlurHash } from "fast-blurhash";
 
-export const Canvas = ({ blurHash, width, height }) => {
+export default function Canvas({ blurHash, width, height }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -17,5 +17,5 @@ export const Canvas = ({ blurHash, width, height }) => {
     ctx.putImageData(imageData, 0, 0);
   }, []);
 
-  return <canvas ref={canvasRef} />;
-};
+  return <canvas ref={canvasRef} width={width} height={height} />;
+}

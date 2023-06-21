@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { useDarkMode } from "usehooks-ts";
+import { Box } from "@mui/material";
 import Style from "./Navbar.module.scss";
 import Toggler from "./Toggler";
-import { NavLink } from "react-router-dom";
-import { Box } from "@mui/material";
-import { useDarkMode } from "usehooks-ts";
 
 const links = [
   {

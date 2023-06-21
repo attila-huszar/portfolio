@@ -1,7 +1,6 @@
-import React from "react";
+import { Box } from "@mui/material";
 import Style from "./About.module.scss";
 import Terminal from "./Terminal";
-import { Box } from "@mui/material";
 import { info } from "../../assets/info";
 
 export default function About() {

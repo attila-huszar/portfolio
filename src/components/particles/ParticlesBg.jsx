@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
 import Particles from "react-particles";
 import { loadSlim } from "tsparticles-slim";
 import { particleBgColors } from "./particleBgColors";
+import { useCallback, useEffect, useState } from "react";
 
 export default function ParticlesBg({ darkMode }) {
   const particlesInit = useCallback(async engine => {
