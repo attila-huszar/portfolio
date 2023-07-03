@@ -1,4 +1,5 @@
 import selfPortrait from "../../assets/Attila_Huszar_pic_sm-nobg.webp";
+import selfPortraitFallBack from "../../assets/Attila_Huszar_pic_sm-nobg.png";
 import { Box } from "@mui/material";
 import { useDarkMode } from "usehooks-ts";
 import classNames from "classnames";
@@ -12,7 +13,6 @@ export default function Home() {
 
   return (
     <Box
-      component={"main"}
       display={"flex"}
       flexDirection={{ xs: "column", md: "row" }}
       alignItems={"center"}
@@ -22,7 +22,8 @@ export default function Home() {
         className={classNames(Style.avatar, Style.shadowed)}
         component={"img"}
         src={selfPortrait}
-        alt={"image of developer"}
+        onError={e => (e.currentTarget.src = selfPortraitFallBack)}
+        alt={"developer portrait"}
         style={{
           background: info.gradient,
           borderRadius: "50%",
