@@ -1,4 +1,4 @@
-import selfPortrait from "../../assets/Attila_Huszar_pic_sm-nobg.png";
+import selfPortrait from "../../assets/Attila_Huszar_pic_sm-nobg.webp";
 import { Box } from "@mui/material";
 import { useDarkMode } from "usehooks-ts";
 import classNames from "classnames";
