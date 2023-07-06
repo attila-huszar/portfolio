@@ -47,7 +47,7 @@ export const info = {
     frameworks: [
       "React",
       "Node.js",
-      "Express",
+      "Express.js",
       "Material UI",
       "Sass",
       "Tailwind",

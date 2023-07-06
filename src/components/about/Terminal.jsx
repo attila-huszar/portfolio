@@ -7,9 +7,7 @@ export default function Terminal({ text }) {
     <Box
       component={"section"}
       className={classNames(Style.terminal, Style.shadowed)}
-      width={{ xs: "90%", md: "50%" }}
-      borderRadius={"0.5rem"}
-      m={"50px 0 0"}>
+      width={{ xs: "90%", md: "60%" }}>
       <Box
         sx={{ backgroundColor: "#8c8c8c" }}
         p={"0.4rem"}

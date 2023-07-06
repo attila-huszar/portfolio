@@ -33,6 +33,7 @@ export default function Navbar() {
         height: "60px",
         position: "fixed",
         top: "0",
+        zIndex: 1,
         fontSize: "18px",
         backdropFilter: "blur(8px)",
         WebkitBackdropFilter: "blur(8px)",

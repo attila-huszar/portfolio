@@ -9,9 +9,9 @@ ul {
 }
 
 .skills {
-  columns: 2;
+  columns: 1;
 
-  @media only screen and (max-width: 900px) {
-    columns: 1;
+  @media only screen and (min-width: 900px) {
+    columns: 2;
   }
 }

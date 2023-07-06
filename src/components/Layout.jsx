@@ -29,7 +29,7 @@ export default function Layout() {
         <Grid item>
           <Navbar />
         </Grid>
-        <Grid item flexGrow={1}>
+        <Grid item>
           <Routes>
             <Route index element={<Home />} />
             <Route path="/about" element={<About />} />
