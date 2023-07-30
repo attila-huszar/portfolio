@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useDarkMode } from "usehooks-ts";
 import { Box, Button } from "@mui/material";
 import Style from "./PortfolioBlock.module.scss";
 import Canvas from "./Canvas";
@@ -24,12 +25,15 @@ export default function PortfolioBlock({
     img.onload = () => {
       setImageLoaded(true);
     };
-  }, [image]);
+  }, []);
+
+  const { isDarkMode } = useDarkMode();
+  const theme = isDarkMode ? "dark" : "light";
 
   return (
     <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
       <a href={source} target={"_blank"} rel="noopener noreferrer">
-        <Box className={Style.wrap}>
+        <Box className={`${Style.wrap} ${Style[theme]}`}>
           <Box
             sx={{
               width,

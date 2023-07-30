@@ -1,30 +1,30 @@
 import { NavLink } from "react-router-dom";
 import { useDarkMode } from "usehooks-ts";
 import { Box } from "@mui/material";
-import Style from "./Navbar.module.scss";
 import Toggler from "./Toggler";
+import Style from "./Navbar.module.scss";
 
 const links = [
   {
-    name: "Home",
+    name: "HOME",
     to: "/",
   },
   {
-    name: "About me",
+    name: "ABOUT",
     to: "/about",
   },
   {
-    name: "Portfolio",
+    name: "PORTFOLIO",
     to: "/portfolio",
   },
 ];
 
 export default function Navbar() {
   const { isDarkMode } = useDarkMode();
+  const theme = isDarkMode ? "dark" : "light";
 
   return (
     <Box
-      className={isDarkMode ? Style.dark : Style.light}
       style={{
         display: "flex",
         justifyContent: "center",
@@ -49,7 +49,9 @@ export default function Navbar() {
           <NavLink
             to={link.to}
             style={{ padding: "15px 0" }}
-            className={({ isActive }) => (isActive ? Style.active : "")}>
+            className={({ isActive }) =>
+              isActive ? `${Style[theme]} ${Style.activeLink}` : ""
+            }>
             {link.name}
           </NavLink>
         </li>

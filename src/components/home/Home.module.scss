@@ -20,12 +20,6 @@ h2 {
   }
 }
 
-a > i:hover {
-  color: $purple;
-  transition: color 0.4s ease;
-  // animation: changeColors 10s infinite;
-}
-
 .hand {
   animation-name: wave;
   animation-duration: 2.5s;

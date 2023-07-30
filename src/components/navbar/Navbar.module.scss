@@ -1,3 +1,11 @@
-.active {
-  border-bottom: 3px solid #8d53ff;
+@import "../../variables.modules";
+
+.dark.activeLink {
+  color: $primary;
+  border-bottom: 3px solid $primary;
+}
+
+.light.activeLink {
+  color: $secondary;
+  border-bottom: 3px solid $secondary;
 }

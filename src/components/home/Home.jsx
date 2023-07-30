@@ -25,9 +25,11 @@ export default function Home() {
         onError={e => (e.currentTarget.src = selfPortraitFallBack)}
         alt={"developer portrait"}
         style={{
-          background: info.gradient,
+          background: isDarkMode
+            ? info.gradientPrimary
+            : info.gradientSecondary,
           borderRadius: "50%",
-          padding: "0.75rem",
+          padding: "0.1rem",
           objectFit: "cover",
         }}
         width={{ xs: "320px", md: "375px" }}
@@ -53,13 +55,13 @@ export default function Home() {
           Hi, I'm{" "}
           <span
             style={{
-              background: info.gradient,
+              background: info.gradientPrimary,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}>
             {info.firstName}
           </span>
-          <span className={Style.hand}> 🤚</span>
+          <span className={Style.hand}>🤚</span>
         </h1>
         <h2>I'm {info.position}</h2>
         <Box component={"ul"} p={"0.8rem"}>

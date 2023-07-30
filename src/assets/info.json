@@ -3,9 +3,10 @@
   "lastName": "Huszár",
   "initials": "AH",
   "position": "a Full Stack Developer",
-  "colorPrimary": "rgb(166,104,255)",
-  "colorSecondary": "rgb(0,255,164)",
-  "gradient": "linear-gradient(135deg, rgb(166,104,255), rgb(0,255,164))",
+  "colorPrimary": "#E7B669",
+  "colorSecondary": "#336699",
+  "gradientPrimary": "linear-gradient(135deg, #5C7C8A, #98c379)",
+  "gradientSecondary": "linear-gradient(135deg, #5C7C8A, #E7B669)",
   "miniBio": [
     {
       "emoji": "🇪🇺",
