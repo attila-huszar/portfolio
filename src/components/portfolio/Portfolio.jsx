@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import PortfolioBlock from "./PortfolioBlock";
-import { info } from "../../assets/info";
+import info from "../../assets/info.json";
 
 export default function Portfolio() {
   const imageWidth = 350;

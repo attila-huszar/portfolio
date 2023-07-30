@@ -5,7 +5,7 @@ import { useDarkMode } from "usehooks-ts";
 import Style from "./Home.module.scss";
 import EmojiBullet from "./EmojiBullet";
 import SocialIcon from "./SocialIcon";
-import { info } from "../../assets/info";
+import info from "../../assets/info.json";
 
 export default function Home() {
   const { isDarkMode } = useDarkMode();

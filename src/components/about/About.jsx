@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import Style from "./About.module.scss";
 import Terminal from "./Terminal";
-import { info } from "../../assets/info";
+import info from "../../assets/info.json";
 
 export default function About() {
   const firstName = info.firstName.toLowerCase();
@@ -11,13 +11,13 @@ export default function About() {
     return (
       <>
         <p>
-          <span style={{ color: info.baseColor }}>
+          <span style={{ color: info.colorPrimary }}>
             {firstName}_{lastName} $
           </span>{" "}
           cat about
         </p>
         <p>
-          <span style={{ color: info.baseColor }}>
+          <span style={{ color: info.colorPrimary }}>
             about <span className={Style.green}>(main) </span>${" "}
           </span>
           {info.bio}
@@ -32,7 +32,7 @@ export default function About() {
 
     return (
       <div key={i}>
-        <p style={{ color: info.baseColor }}>{keys}</p>
+        <p style={{ color: info.colorPrimary }}>{keys}</p>
         <ul className={Style.skills}>
           {values.map((skill, i) => (
             <li key={i}>{skill}</li>
@@ -46,13 +46,13 @@ export default function About() {
     return (
       <>
         <p>
-          <span style={{ color: info.baseColor }}>
+          <span style={{ color: info.colorPrimary }}>
             {firstName}_{lastName} $
           </span>{" "}
           cd skills
         </p>
         <p>
-          <span style={{ color: info.baseColor }}>
+          <span style={{ color: info.colorPrimary }}>
             skills <span className={Style.green}>(main)</span> $
           </span>{" "}
           ls
@@ -68,13 +68,13 @@ export default function About() {
   //   return (
   //     <>
   //       <p>
-  //         <span style={{ color: info.baseColor }}>
+  //         <span style={{ color: info.colorPrimary }}>
   //           {firstName}_{lastName.} $
   //         </span>{' '}
   //         cd hobbies/interests
   //       </p>
   //       <p>
-  //         <span style={{ color: info.baseColor }}>
+  //         <span style={{ color: info.colorPrimary }}>
   //           hobbies/interests <span className={Style.green}>(main)</span> $
   //         </span>{' '}
   //         ls
