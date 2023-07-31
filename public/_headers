@@ -1,1 +1,73 @@
-Cache-Control: max-age=604800, immutable
+# Cache.appcache, document html and data
+/*manifest
+  Cache-Control: max-age=0, public
+/*.appcache
+  Cache-Control: max-age=0, public
+/*.html
+  Cache-Control: max-age=0, public
+/*.xml
+  Cache-Control: max-age=0, public
+/*.json
+  Cache-Control: max-age=0, public
+
+
+# Feed
+/*.rss
+  Cache-Control: max-age=3600, public
+/*.atom
+  Cache-Control: max-age=3600, public
+
+
+# Media: images, icons, video, audio, HTC
+/*.jpg
+  Cache-Control: max-age=2592000, public
+/*.jpeg
+  Cache-Control: max-age=2592000, public
+/*.gif
+  Cache-Control: max-age=2592000, public
+/*.png
+  Cache-Control: max-age=2592000, public
+/*.ico
+  Cache-Control: max-age=2592000, public
+/*.cur
+  Cache-Control: max-age=2592000, public
+/*.gz
+  Cache-Control: max-age=2592000, public
+/*.svg
+  Cache-Control: max-age=2592000, public
+/*.mp4
+  Cache-Control: max-age=2592000, public
+/*.ogg
+  Cache-Control: max-age=2592000, public
+/*.ogv
+  Cache-Control: max-age=2592000, public
+/*.webp
+  Cache-Control: max-age=2592000, public
+/*.webm
+  Cache-Control: max-age=2592000, public
+/*.htc
+  Cache-Control: max-age=2592000, public
+/*.svgz
+  Cache-Control: max-age=2592000, public
+
+
+# CSS and Javascript
+/*.css
+  Cache-Control: max-age=31536000, public
+/*.js
+  Cache-Control: max-age=31536000, public
+
+
+# WebFonts
+/*.ttf
+  Cache-Control: max-age=2592000, public
+/*.ttc
+  Cache-Control: max-age=2592000, public
+/*.otf
+  Cache-Control: max-age=2592000, public
+/*.eot
+  Cache-Control: max-age=2592000, public
+/*.woff
+  Cache-Control: max-age=2592000, public
+/*.woff2
+  Cache-Control: max-age=2592000, public
