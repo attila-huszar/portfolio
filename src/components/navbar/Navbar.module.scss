@@ -2,10 +2,27 @@
 
 .dark.activeLink {
   color: $primary;
-  border-bottom: 3px solid $primary;
 }
 
 .light.activeLink {
   color: $secondary;
-  border-bottom: 3px solid $secondary;
+}
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  left: var(--_left, 0);
+  bottom: 0;
+  width: var(--_width, 60px);
+  height: 2px;
+  translate: var(--_offset);
+  transition: translate 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.27);
+}
+
+.dark.navbar::after {
+  background: $primary;
+}
+
+.light.navbar::after {
+  background: $secondary;
 }

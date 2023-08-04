@@ -1,6 +1,7 @@
 @import "../variables.modules";
 
 .dark {
+  color-scheme: dark;
   color: $white;
 
   a,
@@ -26,6 +27,7 @@
 }
 
 .light {
+  color-scheme: light;
   color: $dark;
 
   a,
