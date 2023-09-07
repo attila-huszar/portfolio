@@ -8,7 +8,7 @@
 /*.xml
   Cache-Control: max-age=0, public
 /*.json
-  Cache-Control: max-age=0, public
+  Cache-Control: max-age=2592000, public
 
 
 # Feed

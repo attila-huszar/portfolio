@@ -1,7 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { Box, Grid } from "@mui/material";
 import { useDarkMode } from "usehooks-ts";
-import { useEffect } from "react";
 import Style from "./Layout.module.scss";
 import ParticlesBg from "./particles/ParticlesBg";
 import Navbar from "./navbar/Navbar";
@@ -11,8 +11,9 @@ import Portfolio from "./portfolio/Portfolio";
 
 export default function Layout() {
   const { isDarkMode } = useDarkMode();
-  let location = useLocation();
+  const location = useLocation();
 
+  // Google Analytics
   useEffect(() => {
     gtag("event", `page_nav_to_${location.pathname}`);
   }, [location]);
@@ -40,11 +41,11 @@ export default function Layout() {
           <Box
             component={"footer"}
             display={"flex"}
-            flexDirection={"column"}
+            justifyContent={"center"}
             alignItems={"center"}
-            py={"1.5rem"}
             sx={{ opacity: 0.7 }}
-            width={"100%"}>
+            width={"100%"}
+            height={"75px"}>
             <p>
               Attila Huszár
               <i className="fa fa-copyright fa-flip-horizontal"></i>2023

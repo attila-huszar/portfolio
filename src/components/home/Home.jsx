@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { DataContext } from "../App";
+import ringsLoader from "../../assets/rings.svg";
 import selfPortrait from "../../assets/Attila_Huszar_pic_sm-nobg.webp";
 import selfPortraitFallBack from "../../assets/Attila_Huszar_pic_sm-nobg.png";
 import { Box } from "@mui/material";
@@ -5,10 +8,18 @@ import { useDarkMode } from "usehooks-ts";
 import Style from "./Home.module.scss";
 import EmojiBullet from "./EmojiBullet";
 import SocialIcon from "./SocialIcon";
-import info from "../../assets/info.json";
 
 export default function Home() {
   const { isDarkMode } = useDarkMode();
+  const data = useContext(DataContext);
+
+  if (!data)
+    return (
+      <div style={{ width: "100%" }} title="Loading...">
+        <img src={ringsLoader} style={{ margin: "auto" }} alt="Loading" />
+        <p style={{ textAlign: "center" }}>Loading...</p>
+      </div>
+    );
 
   return (
     <Box
@@ -25,9 +36,7 @@ export default function Home() {
         onError={e => (e.currentTarget.src = selfPortraitFallBack)}
         alt={"developer portrait"}
         style={{
-          background: isDarkMode
-            ? info.gradientPrimary
-            : info.gradientSecondary,
+          background: isDarkMode ? data.gradientPrimary : data.gradientSecondary,
           borderRadius: "50%",
           padding: "0.1rem",
           objectFit: "cover",
@@ -40,9 +49,7 @@ export default function Home() {
       <Box
         style={{
           borderRadius: "1rem",
-          background: isDarkMode
-            ? "rgba(0, 0, 0, 0.2)"
-            : "rgba(255, 255, 255, 0.2)",
+          background: isDarkMode ? "rgba(0, 0, 0, 0.2)" : "rgba(255, 255, 255, 0.2)",
           boxShadow: isDarkMode
             ? "0 0 10px 0 rgba(0, 0, 0, 0.2)"
             : "0 0 10px 0 rgba(255, 255, 255, 0.2)",
@@ -55,23 +62,18 @@ export default function Home() {
           Hi, I'm{" "}
           <span
             style={{
-              background: info.gradientPrimary,
+              background: data.gradientPrimary,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}>
-            {info.firstName}
+            {data.firstName}
           </span>
           <span className={Style.hand}>🤚</span>
         </h1>
-        <h2>I'm {info.position}</h2>
+        <h2>I'm {data.position}</h2>
         <Box component={"ul"} p={"0.8rem"}>
-          {info.miniBio.map((bio, i) => (
-            <EmojiBullet
-              key={i}
-              emoji={bio.emoji}
-              text={bio.text}
-              url={bio.url}
-            />
+          {data.miniBio.map((bio, i) => (
+            <EmojiBullet key={i} emoji={bio.emoji} text={bio.text} url={bio.url} />
           ))}
         </Box>
         <Box
@@ -79,13 +81,8 @@ export default function Home() {
           gap={"1.5rem"}
           justifyContent={"center"}
           fontSize={{ xs: "2rem", md: "2.5rem" }}>
-          {info.socials.map((social, i) => (
-            <SocialIcon
-              key={i}
-              link={social.link}
-              icon={social.icon}
-              label={social.label}
-            />
+          {data.socials.map((social, i) => (
+            <SocialIcon key={i} link={social.link} icon={social.icon} label={social.label} />
           ))}
         </Box>
       </Box>

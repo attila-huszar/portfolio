@@ -1,26 +1,35 @@
+import { useContext } from "react";
+import { DataContext } from "../App";
 import { Box } from "@mui/material";
+import ringsLoader from "../../assets/rings.svg";
 import Style from "./About.module.scss";
 import Terminal from "./Terminal";
-import info from "../../assets/info.json";
 
 export default function About() {
-  const firstName = info.firstName.toLowerCase();
-  const lastName = info.lastName.toLowerCase();
+  const data = useContext(DataContext);
 
   function aboutMeText() {
+    if (!data)
+      return (
+        <div style={{ width: "100%" }} title="Loading...">
+          <img src={ringsLoader} style={{ margin: "auto" }} alt="Loading" />
+          <p style={{ textAlign: "center" }}>Loading...</p>
+        </div>
+      );
+
     return (
       <>
         <p>
-          <span style={{ color: info.colorPrimary }}>
-            {firstName}_{lastName} $
+          <span style={{ color: data.colorPrimary }}>
+            {data.firstName.toLowerCase()}_{data.lastName.toLowerCase()} $
           </span>{" "}
           cat about
         </p>
         <p>
-          <span style={{ color: info.colorPrimary }}>
+          <span style={{ color: data.colorPrimary }}>
             about <span className={Style.green}>(main) </span>${" "}
           </span>
-          {info.bio}
+          {data.bio}
         </p>
       </>
     );
@@ -32,7 +41,7 @@ export default function About() {
 
     return (
       <div key={i}>
-        <p style={{ color: info.colorPrimary }}>{keys}</p>
+        <p style={{ color: data.colorPrimary }}>{keys}</p>
         <ul className={Style.skills}>
           {values.map((skill, i) => (
             <li key={i}>{skill}</li>
@@ -43,22 +52,30 @@ export default function About() {
   };
 
   function skillsText() {
+    if (!data)
+      return (
+        <div style={{ width: "100%" }} title="Loading...">
+          <img src={ringsLoader} style={{ margin: "auto" }} alt="Loading" />
+          <p style={{ textAlign: "center" }}>Loading...</p>
+        </div>
+      );
+
     return (
       <>
         <p>
-          <span style={{ color: info.colorPrimary }}>
-            {firstName}_{lastName} $
+          <span style={{ color: data.colorPrimary }}>
+            {data.firstName.toLowerCase()}_{data.lastName.toLowerCase()} $
           </span>{" "}
           cd skills
         </p>
         <p>
-          <span style={{ color: info.colorPrimary }}>
+          <span style={{ color: data.colorPrimary }}>
             skills <span className={Style.green}>(main)</span> $
           </span>{" "}
           ls
         </p>
-        {Object.keys(info.skills).map((e, i) => {
-          return skillsSection({ [e]: info.skills[e] }, i);
+        {Object.keys(data.skills).map((e, i) => {
+          return skillsSection({ [e]: data.skills[e] }, i);
         })}
       </>
     );
@@ -94,11 +111,7 @@ export default function About() {
   // }
 
   return (
-    <Box
-      display={"flex"}
-      flexDirection={"column"}
-      alignItems={"center"}
-      mt={"3rem"}>
+    <Box display={"flex"} flexDirection={"column"} alignItems={"center"} mt={"3rem"}>
       <Terminal text={aboutMeText()} />
       <Terminal text={skillsText()} />
       {/* <Terminal text={miscText()} /> */}
