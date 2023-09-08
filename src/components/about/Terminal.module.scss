@@ -1,18 +1,5 @@
 @import "../../variables.modules";
 
-i {
-  padding: 0.4rem;
-  &.red {
-    color: $red;
-  }
-  &.amber {
-    color: $yellow;
-  }
-  &.green {
-    color: $green;
-  }
-}
-
 .terminal {
   margin-top: 50px;
   border-radius: 0.5rem;
@@ -25,5 +12,22 @@ i {
     @media only screen and (min-width: 900px) {
       font-size: 1.5rem;
     }
+  }
+}
+
+.circle {
+  display: inline-block;
+  margin: 0.4rem 0.4rem 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  &.red {
+    background-color: $red;
+  }
+  &.yellow {
+    background-color: $yellow;
+  }
+  &.green {
+    background-color: $green;
   }
 }

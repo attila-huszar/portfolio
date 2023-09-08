@@ -3,8 +3,9 @@ import { useState, useEffect, createContext } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useDarkMode } from "usehooks-ts";
 import Layout from "./Layout";
+import dataFallback from "../assets/info_fallback.json";
 
-export const DataContext = createContext(null);
+export const DataContext = createContext(dataFallback);
 
 export default function App() {
   const { isDarkMode } = useDarkMode();
@@ -22,7 +23,7 @@ export default function App() {
       const result = await response.json();
       setData(result);
     } catch (error) {
-      console.error(error);
+      setData(dataFallback);
     }
   }
 

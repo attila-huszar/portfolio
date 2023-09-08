@@ -35,6 +35,7 @@ export default function Layout() {
             <Route index element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/*" element={<Home />} />
           </Routes>
         </Grid>
         <Grid item>

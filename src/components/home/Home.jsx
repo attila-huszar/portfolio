@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { DataContext } from "../App";
-import ringsLoader from "../../assets/rings.svg";
 import selfPortrait from "../../assets/Attila_Huszar_pic_sm-nobg.webp";
 import selfPortraitFallBack from "../../assets/Attila_Huszar_pic_sm-nobg.png";
 import { Box } from "@mui/material";
 import { useDarkMode } from "usehooks-ts";
+import { PendingFetch } from "../PendingFetch";
 import Style from "./Home.module.scss";
 import EmojiBullet from "./EmojiBullet";
 import SocialIcon from "./SocialIcon";
@@ -12,14 +12,9 @@ import SocialIcon from "./SocialIcon";
 export default function Home() {
   const { isDarkMode } = useDarkMode();
   const data = useContext(DataContext);
-
-  if (!data)
-    return (
-      <div style={{ width: "100%" }} title="Loading...">
-        <img src={ringsLoader} style={{ margin: "auto" }} alt="Loading" />
-        <p style={{ textAlign: "center" }}>Loading...</p>
-      </div>
-    );
+  if (!data) {
+    return <PendingFetch />;
+  }
 
   return (
     <Box

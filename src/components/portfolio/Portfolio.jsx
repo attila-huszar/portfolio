@@ -1,21 +1,14 @@
 import { useContext } from "react";
 import { DataContext } from "../App";
 import { Grid } from "@mui/material";
-import ringsLoader from "../../assets/rings.svg";
+import { PendingFetch } from "../PendingFetch";
 import PortfolioBlock from "./PortfolioBlock";
 
 export default function Portfolio() {
   const data = useContext(DataContext);
-  const imageWidth = 350;
-  const imageHeight = 185;
-
-  if (!data)
-    return (
-      <div style={{ width: "100%" }} title="Loading...">
-        <img src={ringsLoader} style={{ margin: "auto" }} alt="Loading" />
-        <p style={{ textAlign: "center" }}>Loading...</p>
-      </div>
-    );
+  if (!data) {
+    return <PendingFetch />;
+  }
 
   return (
     <Grid container maxWidth={"1100px"} rowGap={6} margin={"100px auto 0"}>
@@ -27,8 +20,8 @@ export default function Portfolio() {
             source={project.source}
             image={project.image}
             blurHash={project.blurHash}
-            width={imageWidth}
-            height={imageHeight}
+            width={350}
+            height={185}
           />
         </Grid>
       ))}

@@ -1,21 +1,17 @@
 import { useContext } from "react";
 import { DataContext } from "../App";
 import { Box } from "@mui/material";
-import ringsLoader from "../../assets/rings.svg";
 import Style from "./About.module.scss";
+import { PendingFetch } from "../PendingFetch";
 import Terminal from "./Terminal";
 
 export default function About() {
   const data = useContext(DataContext);
 
   function aboutMeText() {
-    if (!data)
-      return (
-        <div style={{ width: "100%" }} title="Loading...">
-          <img src={ringsLoader} style={{ margin: "auto" }} alt="Loading" />
-          <p style={{ textAlign: "center" }}>Loading...</p>
-        </div>
-      );
+    if (!data) {
+      return <PendingFetch />;
+    }
 
     return (
       <>
@@ -52,13 +48,9 @@ export default function About() {
   };
 
   function skillsText() {
-    if (!data)
-      return (
-        <div style={{ width: "100%" }} title="Loading...">
-          <img src={ringsLoader} style={{ margin: "auto" }} alt="Loading" />
-          <p style={{ textAlign: "center" }}>Loading...</p>
-        </div>
-      );
+    if (!data) {
+      return <PendingFetch />;
+    }
 
     return (
       <>
@@ -81,40 +73,41 @@ export default function About() {
     );
   }
 
-  // function miscText() {
-  //   return (
-  //     <>
-  //       <p>
-  //         <span style={{ color: info.colorPrimary }}>
-  //           {firstName}_{lastName.} $
-  //         </span>{' '}
-  //         cd hobbies/interests
-  //       </p>
-  //       <p>
-  //         <span style={{ color: info.colorPrimary }}>
-  //           hobbies/interests <span className={Style.green}>(main)</span> $
-  //         </span>{' '}
-  //         ls
-  //       </p>
-  //       <ul>
-  //         {info.hobbies.map((hobby, i) => (
-  //           <li key={i}>
-  //             <Box component={'span'} mr={'1rem'}>
-  //               {hobby.emoji}
-  //             </Box>
-  //             {hobby.label}
-  //           </li>
-  //         ))}
-  //       </ul>
-  //     </>
-  //   );
-  // }
+  function miscText() {
+    if (!data) {
+      return <PendingFetch />;
+    }
+
+    return (
+      <>
+        <p>
+          <span style={{ color: data.colorPrimary }}>
+            {data.firstName.toLowerCase()}_{data.lastName.toLowerCase()} $
+          </span>{" "}
+          cd hobbies
+        </p>
+        <p>
+          <span style={{ color: data.colorPrimary }}>
+            hobbies <span className={Style.green}>(main)</span> $
+          </span>{" "}
+          ls
+        </p>
+        <ul>
+          {data.hobbies.map((hobby, i) => (
+            <li key={i}>
+              {hobby.emoji} {hobby.label}
+            </li>
+          ))}
+        </ul>
+      </>
+    );
+  }
 
   return (
     <Box display={"flex"} flexDirection={"column"} alignItems={"center"} mt={"3rem"}>
       <Terminal text={aboutMeText()} />
       <Terminal text={skillsText()} />
-      {/* <Terminal text={miscText()} /> */}
+      <Terminal text={miscText()} />
     </Box>
   );
 }
