@@ -31,22 +31,6 @@ export default function About() {
     );
   }
 
-  const skillsSection = (skill, i) => {
-    const keys = Object.keys(skill)[0];
-    const values = skill[keys];
-
-    return (
-      <div key={i}>
-        <p style={{ color: data.colorPrimary }}>{keys}</p>
-        <ul className={Style.skills}>
-          {values.map((skill, i) => (
-            <li key={i}>{skill}</li>
-          ))}
-        </ul>
-      </div>
-    );
-  };
-
   function skillsText() {
     if (!data) {
       return <PendingFetch />;
@@ -66,8 +50,18 @@ export default function About() {
           </span>{" "}
           ls
         </p>
-        {Object.keys(data.skills).map((e, i) => {
-          return skillsSection({ [e]: data.skills[e] }, i);
+
+        {Object.keys(data.skills).map((skillGroup, i) => {
+          return (
+            <div key={i}>
+              <p style={{ color: data.colorPrimary }}>{skillGroup}</p>
+              <ul className={Style.skills}>
+                {data.skills[skillGroup].map((skill, i) => (
+                  <li key={i}>{skill}</li>
+                ))}
+              </ul>
+            </div>
+          );
         })}
       </>
     );

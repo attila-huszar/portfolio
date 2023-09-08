@@ -68,6 +68,7 @@ export default function Navbar() {
         top: "0",
         zIndex: 1,
         fontSize: "18px",
+        textShadow: isDarkMode ? "" : "0 0 25px #000",
         textTransform: "uppercase",
         backdropFilter: "blur(8px)",
         WebkitBackdropFilter: "blur(8px)",
