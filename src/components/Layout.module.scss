@@ -4,19 +4,12 @@
   color-scheme: dark;
   color: $white;
 
-  a,
-  i,
-  li {
+  a {
     color: $white;
   }
 
   a:hover,
   a:focus {
-    color: $primary;
-    transition: color 0.4s ease;
-  }
-
-  a > i:hover {
     color: $primary;
     transition: color 0.4s ease;
   }
@@ -30,19 +23,12 @@
   color-scheme: light;
   color: $dark;
 
-  a,
-  i,
-  li {
+  a {
     color: $dark;
   }
 
   a:hover,
   a:focus {
-    color: $secondary;
-    transition: color 0.4s ease;
-  }
-
-  a > i:hover {
     color: $secondary;
     transition: color 0.4s ease;
   }

@@ -11,7 +11,7 @@ export default function Portfolio() {
   }
 
   return (
-    <Grid container maxWidth={"1100px"} rowGap={6} margin={"100px auto 0"}>
+    <Grid container maxWidth="1100px" rowGap={6} margin="100px auto 0">
       {data.portfolio.map((project, i) => (
         <Grid item xs={12} md={6} key={i}>
           <PortfolioBlock

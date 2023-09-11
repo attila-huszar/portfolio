@@ -18,18 +18,18 @@ export default function Home() {
 
   return (
     <Box
-      component={"section"}
-      display={"flex"}
+      component="section"
+      display="flex"
       flexDirection={{ xs: "column", md: "row" }}
-      alignItems={"center"}
-      justifyContent={"center"}
-      mt={"100px"}>
+      alignItems="center"
+      justifyContent="center"
+      mt="100px">
       <Box
         className={Style.shadowed}
-        component={"img"}
+        component="img"
         src={selfPortrait}
         onError={e => (e.currentTarget.src = selfPortraitFallBack)}
-        alt={"developer portrait"}
+        alt="developer portrait"
         style={{
           background: isDarkMode ? data.gradientPrimary : data.gradientSecondary,
           borderRadius: "50%",
@@ -66,18 +66,24 @@ export default function Home() {
           <span className={Style.hand}>🤚</span>
         </h1>
         <h2>I'm {data.position}</h2>
-        <Box component={"ul"} p={"0.8rem"}>
+        <Box component="ul" p="0.8rem">
           {data.miniBio.map((bio, i) => (
             <EmojiBullet key={i} emoji={bio.emoji} text={bio.text} url={bio.url} />
           ))}
         </Box>
         <Box
-          display={"flex"}
-          gap={"1.5rem"}
-          justifyContent={"center"}
+          display="flex"
+          gap="2rem"
+          justifyContent="center"
           fontSize={{ xs: "2rem", md: "2.5rem" }}>
           {data.socials.map((social, i) => (
-            <SocialIcon key={i} link={social.link} icon={social.icon} label={social.label} />
+            <SocialIcon
+              key={i}
+              label={social.label}
+              link={social.link}
+              svg={social.svg}
+              viewBox={social.viewBox}
+            />
           ))}
         </Box>
       </Box>

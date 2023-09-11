@@ -23,10 +23,10 @@ export default function Layout() {
       <ParticlesBg darkMode={isDarkMode} />
       <Grid
         container
-        display={"flex"}
-        flexDirection={"column"}
-        minHeight={"100vh"}
-        justifyContent={"space-between"}>
+        display="flex"
+        flexDirection="column"
+        minHeight="100vh"
+        justifyContent="space-between">
         <Grid item>
           <Navbar />
         </Grid>
@@ -40,17 +40,23 @@ export default function Layout() {
         </Grid>
         <Grid item>
           <Box
-            component={"footer"}
-            display={"flex"}
-            justifyContent={"center"}
-            alignItems={"center"}
-            sx={{ opacity: 0.7 }}
-            width={"100%"}
-            height={"75px"}>
-            <p>
-              Attila Huszár
-              <i className="fa fa-copyright fa-flip-horizontal"></i>2023
-            </p>
+            component="footer"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            sx={{ opacity: 0.7, gap: "0.5rem" }}
+            width="100%"
+            height="75px">
+            {"Attila Huszár"}
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM199.4 312.6c31.2 31.2 81.9 31.2 113.1 0c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9c-50 50-131 50-181 0s-50-131 0-181s131-50 181 0c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0c-31.2-31.2-81.9-31.2-113.1 0s-31.2 81.9 0 113.1z"
+                transform="scale (-1, 1)"
+                transform-origin="center"
+              />
+            </svg>
+            {new Date().getFullYear()}
           </Box>
         </Grid>
       </Grid>

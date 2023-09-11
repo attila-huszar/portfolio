@@ -55,7 +55,7 @@ export default function Navbar() {
 
   return (
     <Box
-      component={"ul"}
+      component="ul"
       className={`${Style[theme]} ${Style.navbar}`}
       ref={navbarRef}
       style={{

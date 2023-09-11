@@ -23,7 +23,7 @@ export default function PortfolioBlock({ image, live, source, title, blurHash, w
   const theme = isDarkMode ? "dark" : "light";
 
   return (
-    <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
+    <Box display="flex" flexDirection="column" alignItems="center">
       <a href={source} target={"_blank"} rel="noopener noreferrer">
         <Box className={`${Style.wrap} ${Style[theme]}`}>
           <Box
@@ -39,7 +39,7 @@ export default function PortfolioBlock({ image, live, source, title, blurHash, w
             <Canvas blurHash={blurHash} width={width} height={height} />
           </Box>
           <Box
-            component={"img"}
+            component="img"
             src={image}
             alt={`Screenshot of ${title}`}
             sx={{
@@ -56,7 +56,7 @@ export default function PortfolioBlock({ image, live, source, title, blurHash, w
         </Box>
         <p style={{ textAlign: "center", fontSize: "1.25rem" }}>{title}</p>
       </a>
-      <Box display={"flex"} flexDirection={"row"} gap={"1rem"} alignItems={"center"} py={"1rem"}>
+      <Box display="flex" flexDirection="row" gap="1rem" alignItems="center" py="1rem">
         {live && (
           <Button
             href={live}
