@@ -41,12 +41,12 @@ export default function Layout() {
         <Grid item>
           <Box
             component="footer"
+            width="100%"
+            height="75px"
             display="flex"
             justifyContent="center"
             alignItems="center"
-            sx={{ opacity: 0.7, gap: "0.5rem" }}
-            width="100%"
-            height="75px">
+            style={{ opacity: 0.7, gap: "0.5rem", cursor: "default" }}>
             {"Attila Huszár"}
             <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
               <path

@@ -72,7 +72,6 @@ export default function Navbar() {
         textTransform: "uppercase",
         backdropFilter: "blur(8px)",
         WebkitBackdropFilter: "blur(8px)",
-        transition: "all 0.4s ease",
         background: isDarkMode ? "rgba(0, 0, 0, 0.2)" : "rgba(255, 255, 255, 0.2)",
       }}
       gap={{ xs: "2rem", md: "8rem" }}>

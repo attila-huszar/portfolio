@@ -27,7 +27,7 @@ export default function PortfolioBlock({ image, live, source, title, blurHash, w
       <a href={source} target={"_blank"} rel="noopener noreferrer">
         <Box className={`${Style.wrap} ${Style[theme]}`}>
           <Box
-            sx={{
+            style={{
               width,
               height,
               gridRow: 1,
@@ -42,7 +42,7 @@ export default function PortfolioBlock({ image, live, source, title, blurHash, w
             component="img"
             src={image}
             alt={`Screenshot of ${title}`}
-            sx={{
+            style={{
               opacity: imageLoaded ? 1 : 0,
               width,
               height,
@@ -65,7 +65,7 @@ export default function PortfolioBlock({ image, live, source, title, blurHash, w
             disableElevation
             variant="outlined"
             color="inherit"
-            sx={{ borderRadius: "25px" }}
+            style={{ borderRadius: "25px" }}
             startIcon={
               <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
                 <path
@@ -86,7 +86,7 @@ export default function PortfolioBlock({ image, live, source, title, blurHash, w
             disableElevation
             variant="outlined"
             color="inherit"
-            sx={{ borderRadius: "25px" }}
+            style={{ borderRadius: "25px" }}
             startIcon={
               <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512">
                 <path

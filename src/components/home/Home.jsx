@@ -51,7 +51,7 @@ export default function Home() {
           backdropFilter: "blur(8px)",
           WebkitBackdropFilter: "blur(8px)",
           padding: "1rem 2rem",
-          transition: "all 0.4s ease",
+          cursor: "default",
         }}>
         <h1>
           Hi, I'm{" "}

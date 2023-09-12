@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, Fragment } from "react";
 import { DataContext } from "../App";
 import { Box } from "@mui/material";
 import Style from "./About.module.scss";
@@ -53,14 +53,14 @@ export default function About() {
 
         {Object.keys(data.skills).map((skillGroup, i) => {
           return (
-            <div key={i}>
+            <Fragment key={i}>
               <p style={{ color: data.colorPrimary }}>{skillGroup}</p>
               <ul className={Style.skills}>
                 {data.skills[skillGroup].map((skill, i) => (
                   <li key={i}>{skill}</li>
                 ))}
               </ul>
-            </div>
+            </Fragment>
           );
         })}
       </>
@@ -98,7 +98,7 @@ export default function About() {
   }
 
   return (
-    <Box display={"flex"} flexDirection={"column"} alignItems={"center"} mt={"3rem"}>
+    <Box display="flex" flexDirection="column" alignItems="center" mt="3rem">
       <Terminal text={aboutMeText()} />
       <Terminal text={skillsText()} />
       <Terminal text={miscText()} />

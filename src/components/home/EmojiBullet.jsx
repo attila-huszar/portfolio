@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 
 export default function EmojiBullet({ emoji, text, url }) {
   return (
-    <Box component="li" style={{ cursor: "default", display: "flex", alignItems: "center" }}>
+    <Box component="li" display="flex" alignItems="center">
       <Box
         component="span"
         minWidth="45px"
