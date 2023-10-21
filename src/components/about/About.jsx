@@ -7,6 +7,14 @@ import Terminal from "./Terminal";
 
 export default function About() {
   const data = useContext(DataContext);
+  const firstName = data?.firstName
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+  const lastName = data?.lastName
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
 
   function aboutMeText() {
     if (!data) {
@@ -17,7 +25,7 @@ export default function About() {
       <>
         <p>
           <span style={{ color: data.colorPrimary }}>
-            {data.firstName.toLowerCase()}_{data.lastName.toLowerCase()} $
+            {firstName}_{lastName} $
           </span>{" "}
           cat about
         </p>
@@ -40,7 +48,7 @@ export default function About() {
       <>
         <p>
           <span style={{ color: data.colorPrimary }}>
-            {data.firstName.toLowerCase()}_{data.lastName.toLowerCase()} $
+            {firstName}_{lastName} $
           </span>{" "}
           cd skills
         </p>
@@ -76,7 +84,7 @@ export default function About() {
       <>
         <p>
           <span style={{ color: data.colorPrimary }}>
-            {data.firstName.toLowerCase()}_{data.lastName.toLowerCase()} $
+            {firstName}_{lastName} $
           </span>{" "}
           cd hobbies
         </p>
