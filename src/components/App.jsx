@@ -18,7 +18,7 @@ export default function App() {
   async function fetchData() {
     try {
       const response = await fetch(
-        "https://cinkes.s3.eu-north-1.amazonaws.com/portfolio/info.json"
+        "https://s3.eu-central-1.amazonaws.com/attila.huszar/portfolio/info.json",
       );
       const result = await response.json();
       setData(result);
@@ -27,7 +27,6 @@ export default function App() {
     }
   }
 
-  // Theme
   const light = {
     palette: {
       mode: "light",
