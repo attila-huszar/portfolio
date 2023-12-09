@@ -5,4 +5,4 @@ Made with
 Deployed on  
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e9348356-4134-4652-b33b-62a8074b686e/deploy-status)](https://app.netlify.com/sites/attila-huszar/deploys)
 
-[<img src="https://cinkes.s3.eu-north-1.amazonaws.com/portfolio/portfolio.jpg" alt="portfolio site" width="500">](https://attila-huszar.netlify.app/)
+[<img src="https://s3.eu-central-1.amazonaws.com/attila.huszar/portfolio/portfolio.jpg" alt="portfolio site" width="500">](https://attila-huszar.netlify.app/)
