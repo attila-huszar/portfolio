@@ -27,11 +27,14 @@ export default function Home() {
       <Box
         className={Style.shadowed}
         component="img"
+        fetchpriority="high"
         src={selfPortrait}
         onError={e => (e.currentTarget.src = selfPortraitFallBack)}
         alt="developer portrait"
         style={{
-          background: isDarkMode ? data.gradientPrimary : data.gradientSecondary,
+          background: isDarkMode
+            ? data.gradientPrimary
+            : data.gradientSecondary,
           borderRadius: "50%",
           padding: "0.1rem",
           objectFit: "cover",
@@ -44,7 +47,9 @@ export default function Home() {
       <Box
         style={{
           borderRadius: "1rem",
-          background: isDarkMode ? "rgba(0, 0, 0, 0.2)" : "rgba(255, 255, 255, 0.2)",
+          background: isDarkMode
+            ? "rgba(0, 0, 0, 0.2)"
+            : "rgba(255, 255, 255, 0.2)",
           boxShadow: isDarkMode
             ? "0 0 10px 0 rgba(0, 0, 0, 0.2)"
             : "0 0 10px 0 rgba(255, 255, 255, 0.2)",
@@ -68,7 +73,12 @@ export default function Home() {
         <h2>I'm {data.position}</h2>
         <Box component="ul" p="0.8rem">
           {data.miniBio.map((bio, i) => (
-            <EmojiBullet key={i} emoji={bio.emoji} text={bio.text} url={bio.url} />
+            <EmojiBullet
+              key={i}
+              emoji={bio.emoji}
+              text={bio.text}
+              url={bio.url}
+            />
           ))}
         </Box>
         <Box
