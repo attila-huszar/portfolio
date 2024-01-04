@@ -1,4 +1,4 @@
-@import "../../variables.modules";
+@import '../../variables.modules';
 
 .dark.activeLink {
   color: $primary;
@@ -9,7 +9,7 @@
 }
 
 .navbar::after {
-  content: "";
+  content: '';
   position: absolute;
   left: var(--_left, 0);
   bottom: 0;

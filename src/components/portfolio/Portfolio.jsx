@@ -1,13 +1,13 @@
-import { useContext } from "react";
-import { DataContext } from "../App";
-import { Grid } from "@mui/material";
-import { PendingFetch } from "../PendingFetch";
-import PortfolioBlock from "./PortfolioBlock";
+import { useContext } from 'react'
+import { DataContext } from '../App'
+import { Grid } from '@mui/material'
+import { PendingFetch } from '../PendingFetch'
+import PortfolioBlock from './PortfolioBlock'
 
 export default function Portfolio() {
-  const data = useContext(DataContext);
+  const data = useContext(DataContext)
   if (!data) {
-    return <PendingFetch />;
+    return <PendingFetch />
   }
 
   return (
@@ -26,5 +26,5 @@ export default function Portfolio() {
         </Grid>
       ))}
     </Grid>
-  );
+  )
 }

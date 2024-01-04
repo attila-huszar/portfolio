@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box } from '@mui/material'
 
 export default function EmojiBullet({ emoji, text, url }) {
   return (
@@ -7,18 +7,18 @@ export default function EmojiBullet({ emoji, text, url }) {
         component="span"
         minWidth="45px"
         aria-label="short bio"
-        mr={{ xs: "0.5rem", md: "1rem" }}
+        mr={{ xs: '0.5rem', md: '1rem' }}
         fontSize="2rem"
         textAlign="center">
         {emoji}
       </Box>
       {url ? (
-        <a href={url} target={"_blank"} rel="noopener noreferrer">
+        <a href={url} target={'_blank'} rel="noopener noreferrer">
           {text}
         </a>
       ) : (
         <p>{text}</p>
       )}
     </Box>
-  );
+  )
 }

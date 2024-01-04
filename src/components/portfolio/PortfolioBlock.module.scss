@@ -1,4 +1,4 @@
-@import "../../variables.modules";
+@import '../../variables.modules';
 
 .wrap {
   display: grid;
@@ -9,7 +9,7 @@
 }
 
 .wrap::before {
-  content: "";
+  content: '';
   position: absolute;
   opacity: 0;
   top: 0;

@@ -1,24 +1,24 @@
-import { useContext, Fragment } from "react";
-import { DataContext } from "../App";
-import { Box } from "@mui/material";
-import Style from "./About.module.scss";
-import { PendingFetch } from "../PendingFetch";
-import Terminal from "./Terminal";
+import { useContext, Fragment } from 'react'
+import { DataContext } from '../App'
+import { Box } from '@mui/material'
+import Style from './About.module.scss'
+import { PendingFetch } from '../PendingFetch'
+import Terminal from './Terminal'
 
 export default function About() {
-  const data = useContext(DataContext);
+  const data = useContext(DataContext)
   const firstName = data?.firstName
     .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
   const lastName = data?.lastName
     .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
 
   function aboutMeText() {
     if (!data) {
-      return <PendingFetch />;
+      return <PendingFetch />
     }
 
     return (
@@ -26,22 +26,22 @@ export default function About() {
         <p>
           <span style={{ color: data.colorPrimary }}>
             {firstName}_{lastName} $
-          </span>{" "}
+          </span>{' '}
           cat about
         </p>
         <p>
           <span style={{ color: data.colorPrimary }}>
-            about <span className={Style.green}>(main) </span>${" "}
+            about <span className={Style.green}>(main) </span>${' '}
           </span>
           {data.bio}
         </p>
       </>
-    );
+    )
   }
 
   function skillsText() {
     if (!data) {
-      return <PendingFetch />;
+      return <PendingFetch />
     }
 
     return (
@@ -49,13 +49,13 @@ export default function About() {
         <p>
           <span style={{ color: data.colorPrimary }}>
             {firstName}_{lastName} $
-          </span>{" "}
+          </span>{' '}
           cd skills
         </p>
         <p>
           <span style={{ color: data.colorPrimary }}>
             skills <span className={Style.green}>(main)</span> $
-          </span>{" "}
+          </span>{' '}
           ls
         </p>
 
@@ -69,15 +69,15 @@ export default function About() {
                 ))}
               </ul>
             </Fragment>
-          );
+          )
         })}
       </>
-    );
+    )
   }
 
   function miscText() {
     if (!data) {
-      return <PendingFetch />;
+      return <PendingFetch />
     }
 
     return (
@@ -85,13 +85,13 @@ export default function About() {
         <p>
           <span style={{ color: data.colorPrimary }}>
             {firstName}_{lastName} $
-          </span>{" "}
+          </span>{' '}
           cd hobbies
         </p>
         <p>
           <span style={{ color: data.colorPrimary }}>
             hobbies <span className={Style.green}>(main)</span> $
-          </span>{" "}
+          </span>{' '}
           ls
         </p>
         <ul>
@@ -102,7 +102,7 @@ export default function About() {
           ))}
         </ul>
       </>
-    );
+    )
   }
 
   return (
@@ -111,5 +111,5 @@ export default function About() {
       <Terminal text={skillsText()} />
       <Terminal text={miscText()} />
     </Box>
-  );
+  )
 }

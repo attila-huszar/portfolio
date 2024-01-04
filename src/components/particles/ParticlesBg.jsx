@@ -1,31 +1,31 @@
-import { useEffect, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
+import { useEffect, useState } from 'react'
+import Particles, { initParticlesEngine } from '@tsparticles/react'
+import { loadSlim } from '@tsparticles/slim'
 //import { loadBasic } from "@tsparticles/basic";
-import { particleBgColors } from "./particleBgColors";
+import { particleBgColors } from './particleBgColors'
 
 export default function ParticlesBg({ darkMode }) {
-  const [init, setInit] = useState(false);
+  const [init, setInit] = useState(false)
 
   useEffect(() => {
     initParticlesEngine(async engine => {
-      await loadSlim(engine);
+      await loadSlim(engine)
       //await loadBasic(engine);
     }).then(() => {
-      setInit(true);
-    });
-  }, []);
+      setInit(true)
+    })
+  }, [])
 
-  const { background, links, particle } = particleBgColors();
-  const [backgroundColor, setBgColor] = useState(background(darkMode));
-  const [particleColor, setParticleColor] = useState(particle(darkMode));
-  const [linksColor, setLinksColor] = useState(links(darkMode));
+  const { background, links, particle } = particleBgColors()
+  const [backgroundColor, setBgColor] = useState(background(darkMode))
+  const [particleColor, setParticleColor] = useState(particle(darkMode))
+  const [linksColor, setLinksColor] = useState(links(darkMode))
 
   useEffect(() => {
-    setBgColor(background(darkMode));
-    setParticleColor(particle(darkMode));
-    setLinksColor(links(darkMode));
-  }, [darkMode]);
+    setBgColor(background(darkMode))
+    setParticleColor(particle(darkMode))
+    setLinksColor(links(darkMode))
+  }, [darkMode])
 
   return (
     <>
@@ -44,15 +44,15 @@ export default function ParticlesBg({ darkMode }) {
               zIndex: -1,
             },
             interactivity: {
-              detectsOn: "window",
+              detectsOn: 'window',
               events: {
                 onClick: {
                   enable: true,
-                  mode: "push",
+                  mode: 'push',
                 },
                 onHover: {
                   enable: true,
-                  mode: "repulse",
+                  mode: 'repulse',
                 },
                 resize: true,
               },
@@ -86,9 +86,9 @@ export default function ParticlesBg({ darkMode }) {
                 enable: true,
               },
               move: {
-                direction: "none",
+                direction: 'none',
                 enable: true,
-                outMode: "bounce",
+                outMode: 'bounce',
                 random: true,
                 speed: 3,
                 straight: false,
@@ -104,7 +104,7 @@ export default function ParticlesBg({ darkMode }) {
                 value: 0.9,
               },
               shape: {
-                type: "circle",
+                type: 'circle',
               },
               size: {
                 random: true,
@@ -116,5 +116,5 @@ export default function ParticlesBg({ darkMode }) {
         />
       )}
     </>
-  );
+  )
 }
