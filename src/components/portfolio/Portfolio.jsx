@@ -16,8 +16,8 @@ export default function Portfolio() {
         <Grid item xs={12} md={6} key={i}>
           <PortfolioBlock
             title={project.title}
-            live={project.live}
-            source={project.source}
+            deploy={project.deploy}
+            code={project.code}
             image={project.image}
             blurHash={project.blurHash}
             width={350}

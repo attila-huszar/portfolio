@@ -91,7 +91,7 @@ export default function Home() {
               key={i}
               label={social.label}
               link={social.link}
-              svg={social.svg}
+              svgPath={social.svgPath}
               viewBox={social.viewBox}
             />
           ))}
