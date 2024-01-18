@@ -5,15 +5,15 @@
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.15.4",
+    "@mui/material": "^5.15.5",
     "@tsparticles/react": "^3.0.0",
     "fast-blurhash": "^1.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.2",
-    "sass": "^1.69.7",
+    "react-router-dom": "^6.21.3",
+    "sass": "^1.70.0",
     "tsparticles": "^3.1.0",
-    "usehooks-ts": "^2.9.4",
+    "usehooks-ts": "^2.9.5",
     "vite-plugin-svgr": "^4.2.0"
   },
   "devDependencies": {
