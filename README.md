@@ -4,7 +4,7 @@
 
 [![CI](https://github.com/attila-huszar/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/attila-huszar/portfolio/actions/workflows/ci.yml)
 [![Build](https://github.com/attila-huszar/portfolio/actions/workflows/build.yml/badge.svg)](https://github.com/attila-huszar/portfolio/actions/workflows/build.yml)
-[![CodeQL](https://github.com/attila-huszar/portfolio/actions/workflows/codeql.yml/badge.svg)](https://github.com/attila-huszar/portfolio/actions/workflows/codeql.yml)
+[![CodeQL](https://github.com/attila-huszar/portfolio/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/attila-huszar/portfolio/actions/workflows/github-code-scanning/codeql)
 [![GitHub last commit](https://img.shields.io/github/last-commit/attila-huszar/portfolio/master?logo=github)](https://github.com/attila-huszar/portfolio/commits/master)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e9348356-4134-4652-b33b-62a8074b686e/deploy-status)](https://app.netlify.com/sites/attila-huszar/deploys)
