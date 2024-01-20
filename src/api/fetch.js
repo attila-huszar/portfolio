@@ -7,6 +7,6 @@ export async function fetchData() {
     const result = await response.json()
     return result
   } catch (error) {
-    return error
+    throw new Error(error)
   }
 }

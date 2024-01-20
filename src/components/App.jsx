@@ -7,18 +7,15 @@ import Layout from './Layout'
 import infoFallback from '../assets/info_fallback.json'
 
 export const DataContext = createContext(infoFallback)
-const info = await fetchData()
 
 export default function App() {
   const { isDarkMode } = useDarkMode()
   const [data, setData] = useState()
 
   useEffect(() => {
-    if (info instanceof Error || !info) {
-      setData(infoFallback)
-    } else {
-      setData(info)
-    }
+    fetchData()
+      .then(info => setData(info))
+      .catch(() => setData(infoFallback))
   }, [])
 
   const light = {
