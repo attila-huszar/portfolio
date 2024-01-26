@@ -1,6 +1,9 @@
 ## [Portfolio site](https://attila.pages.dev/)
 
-[![React](https://img.shields.io/badge/REACT-grey?logo=react)](https://reactjs.org/) [![MUI](https://img.shields.io/badge/MUI-0081CB?logo=mui&logoColor=fff)](https://mui.com/) [![SCSS](https://img.shields.io/badge/SCSS-hotpink?logo=sass&logoColor=fff)](https://sass-lang.com/) [![Vite](https://img.shields.io/badge/VITE-646CFF?logo=vite&logoColor=fff)](https://vitejs.dev/)  
+[![React](https://img.shields.io/badge/REACT-grey?logo=react)](https://reactjs.org/)
+[![MUI](https://img.shields.io/badge/MUI-0081CB?logo=mui&logoColor=fff)](https://mui.com/)
+[![SCSS](https://img.shields.io/badge/SCSS-hotpink?logo=sass&logoColor=fff)](https://sass-lang.com/)
+[![Vite](https://img.shields.io/badge/VITE-646CFF?logo=vite&logoColor=fff)](https://vitejs.dev/)
 
 [![CI](https://github.com/attila-huszar/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/attila-huszar/portfolio/actions/workflows/ci.yml)
 [![Build](https://github.com/attila-huszar/portfolio/actions/workflows/build.yml/badge.svg)](https://github.com/attila-huszar/portfolio/actions/workflows/build.yml)
