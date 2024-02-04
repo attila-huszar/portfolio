@@ -81,18 +81,32 @@
   ],
   "portfolio": [
     {
-      "title": "This site",
+      "title": "This site (React)",
       "deploy": "https://attila-huszar.netlify.app/",
       "code": "https://github.com/attila-huszar/portfolio/",
-      "image": "https://s3.eu-central-1.amazonaws.com/attila.huszar/portfolio/portfolio.jpg",
+      "image": "https://s3.eu-central-1.amazonaws.com/attila.huszar/portfolio/portfolio.webp",
       "blurHash": "L34.*$yF8wL}-@a+I9V:D4Vr%#tm"
     },
     {
-      "title": "Full Stack School Project",
+      "title": "Full Stack School Project (React + Express)",
       "deploy": "",
-      "code": "https://github.com/attila-huszar/fox-ticket-react/",
-      "image": "https://s3.eu-central-1.amazonaws.com/attila.huszar/portfolio/fox-ticket-react.jpg",
+      "code": "https://github.com/attila-huszar/fox-ticket/",
+      "image": "https://s3.eu-central-1.amazonaws.com/attila.huszar/portfolio/fox-ticket.jpg",
       "blurHash": "LPCZ9Ok?SioL~Akqg3oJVrs+t7oJ"
+    },
+    {
+      "title": "Recipe Book (JS)",
+      "deploy": "https://cooking-ingredients.netlify.app/",
+      "code": "https://github.com/attila-huszar/recipe-book/",
+      "image": "https://s3.eu-central-1.amazonaws.com/attila.huszar/portfolio/recipe-book.webp",
+      "blurHash": "LJRV|HaH-P$y_4NFaebHxao#V?W="
+    },
+    {
+      "title": "Simple Timer (React)",
+      "deploy": "https://simpletimer.pages.dev/",
+      "code": "https://github.com/attila-huszar/countdown-timer",
+      "image": "https://s3.eu-central-1.amazonaws.com/attila.huszar/portfolio/simple-timer.webp",
+      "blurHash": "L23[oIax0JogNVfixKa#4,j[?dWB"
     }
   ]
 }
