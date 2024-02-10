@@ -34,7 +34,7 @@ export default function PortfolioBlock({
 
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
-      <a href={code} target={'_blank'} rel="noopener noreferrer">
+      <a href={deploy || code} target="_blank" rel="noopener noreferrer">
         <Box className={`${Style.wrap} ${Style[theme]}`}>
           <Box
             style={{
@@ -75,7 +75,7 @@ export default function PortfolioBlock({
         {deploy && (
           <Button
             href={deploy}
-            target={'_blank'}
+            target="_blank"
             rel="noopener noreferrer"
             disableElevation
             variant="outlined"
@@ -89,7 +89,7 @@ export default function PortfolioBlock({
         {code && (
           <Button
             href={code}
-            target={'_blank'}
+            target="_blank"
             rel="noopener noreferrer"
             disableElevation
             variant="outlined"
