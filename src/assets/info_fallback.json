@@ -2,7 +2,7 @@
   "firstName": "Attila",
   "lastName": "Huszár",
   "initials": "AH",
-  "position": "a Full Stack Developer",
+  "position": "a Front-end Developer",
   "colorPrimary": "#E7B669",
   "colorSecondary": "#336699",
   "gradientPrimary": "linear-gradient(135deg, #5C7C8A, #98c379)",
@@ -39,7 +39,7 @@
       "viewBox": "0 0 448 512"
     }
   ],
-  "bio": "Greetings! I'm Attila Huszár. My educational background includes studying software development at Green Fox Academy Budapest. I find the process of building web applications and continually expanding my knowledge of emerging technologies to be a thrilling and immensely rewarding journey. In addition, I have a passion for exploring new places and going on exciting travel adventures beyond the digital realm too.",
+  "bio": "Greetings! I'm Attila Huszár. My educational background includes studying software development at NIX Technologies Budapest. I find the process of building web applications and continually expanding my knowledge of emerging technologies to be a thrilling and immensely rewarding journey. In addition, I have a passion for exploring new places and going on exciting travel adventures beyond the digital realm too.",
   "skills": {
     "languages": ["JavaScript", "TypeScript", "HTML/CSS"],
     "frameworks": [
@@ -82,13 +82,20 @@
   "portfolio": [
     {
       "title": "This site (React)",
-      "deploy": "https://attila-huszar.netlify.app/",
+      "deploy": "https://attila.pages.dev/",
       "code": "https://github.com/attila-huszar/portfolio/",
       "image": "https://s3.eu-central-1.amazonaws.com/attila.huszar/portfolio/portfolio.webp",
       "blurHash": "L34.*$yF8wL}-@a+I9V:D4Vr%#tm"
     },
     {
-      "title": "Full Stack School Project (React + Express)",
+      "title": "Portfolio v2 (Next.js)",
+      "deploy": "https://attilah.vercel.app/",
+      "code": "https://github.com/attila-huszar/portfolio-v2/",
+      "image": "https://s3.eu-central-1.amazonaws.com/attila.huszar/portfolio/portfolio-v2.webp",
+      "blurHash": "LG9GtLb|IUxC~EXUNGxDaJR*t7of"
+    },
+    {
+      "title": "Ticketing App (React + Express)",
       "deploy": "",
       "code": "https://github.com/attila-huszar/fox-ticket/",
       "image": "https://s3.eu-central-1.amazonaws.com/attila.huszar/portfolio/fox-ticket.jpg",
@@ -96,7 +103,7 @@
     },
     {
       "title": "Recipe Book (JS)",
-      "deploy": "https://cooking-ingredients.netlify.app/",
+      "deploy": "https://recipe-ingredients.pages.dev/",
       "code": "https://github.com/attila-huszar/recipe-book/",
       "image": "https://s3.eu-central-1.amazonaws.com/attila.huszar/portfolio/recipe-book.webp",
       "blurHash": "LJRV|HaH-P$y_4NFaebHxao#V?W="
