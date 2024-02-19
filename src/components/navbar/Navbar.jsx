@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useContext } from 'react'
 import { NavLink } from 'react-router-dom'
-import { ThemeContext } from '../../context/ThemeContext'
+import { ThemeContext } from '../../context/ThemeProvider'
 import { Box } from '@mui/material'
 import { Toggler } from './Toggler'
 import style from './Navbar.module.scss'

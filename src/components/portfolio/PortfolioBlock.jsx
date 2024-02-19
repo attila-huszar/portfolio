@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react'
-import { ThemeContext } from '../../context/ThemeContext'
+import { ThemeContext } from '../../context/ThemeProvider'
 import { Box, Button } from '@mui/material'
 import { Canvas } from './Canvas'
 import ChromeIcon from '../../assets/svg/chrome.svg?react'

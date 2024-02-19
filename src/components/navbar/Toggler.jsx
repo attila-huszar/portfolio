@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { ThemeContext } from '../../context/ThemeContext'
+import { ThemeContext } from '../../context/ThemeProvider'
 import { IconButton } from '@mui/material'
 import iconSun from '../../assets/svg/icon_sun.svg'
 import iconMoon from '../../assets/svg/icon_moon.svg'

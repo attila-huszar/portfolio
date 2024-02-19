@@ -1,6 +1,6 @@
 import { useEffect, useContext } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { ThemeContext } from '../context/ThemeContext'
+import { ThemeContext } from '../context/ThemeProvider'
 import { Box, Grid } from '@mui/material'
 import { ParticlesBg } from './particles/ParticlesBg'
 import { Navbar } from './navbar/Navbar'

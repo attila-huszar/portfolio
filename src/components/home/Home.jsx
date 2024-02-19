@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { DataContext } from '../../context/DataProvider'
-import { ThemeContext } from '../../context/ThemeContext'
+import { ThemeContext } from '../../context/ThemeProvider'
 import { Box } from '@mui/material'
 import selfPortrait from '../../assets/Attila_Huszar_pic_sm-nobg.webp'
 import selfPortraitFallBack from '../../assets/Attila_Huszar_pic_sm-nobg.png'

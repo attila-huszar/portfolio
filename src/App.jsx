@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom'
 import { DataProvider } from './context/DataProvider'
-import { ThemeProvider } from './context/ThemeContext'
+import { ThemeProvider } from './context/ThemeProvider'
 import { Layout } from './components/Layout'
 
 export default function App() {
