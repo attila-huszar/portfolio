@@ -30,7 +30,7 @@ export function Home() {
         component="img"
         fetchpriority="high"
         src={selfPortrait}
-        onError={e => (e.currentTarget.src = selfPortraitFallBack)}
+        onError={(e) => (e.currentTarget.src = selfPortraitFallBack)}
         alt="developer portrait"
         style={{
           background: isDarkMode

@@ -9,7 +9,7 @@ export const DataProvider = ({ children }) => {
 
   useEffect(() => {
     fetchData()
-      .then(info => setData(info))
+      .then((info) => setData(info))
       .catch(() => setData(infoFallback))
   }, [])
 

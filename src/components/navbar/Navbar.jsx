@@ -84,7 +84,7 @@ export function Navbar() {
         <li key={i}>
           <NavLink
             to={link.to}
-            ref={e => (tabRefs.current[link.name] = e)}
+            ref={(e) => (tabRefs.current[link.name] = e)}
             className={({ isActive }) =>
               isActive ? `${style[theme]} ${style.activeLink}` : ''
             }>

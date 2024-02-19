@@ -12,7 +12,7 @@ export const ThemeProvider = ({ children }) => {
   )
 
   const toggleDarkMode = () => {
-    setIsDarkMode(prevState => !prevState)
+    setIsDarkMode((prevState) => !prevState)
     localStorage.setItem('dark-mode', JSON.stringify(!isDarkMode))
   }
 

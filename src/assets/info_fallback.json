@@ -95,7 +95,14 @@
       "blurHash": "LG9GtLb|IUxC~EXUNGxDaJR*t7of"
     },
     {
-      "title": "Ticketing App (React + Express)",
+      "title": "Star Wars MovieDb (React + Redux)",
+      "deploy": "https://starwarsdb.pages.dev/",
+      "code": "https://github.com/attila-huszar/star-wars-moviedb/",
+      "image": "https://s3.eu-central-1.amazonaws.com/attila.huszar/portfolio/star-wars-moviedb.webp",
+      "blurHash": "L7O40a000000RPRPWCM_00?b%M~q"
+    },
+    {
+      "title": "Ticketing App (React + Node.js)",
       "deploy": "",
       "code": "https://github.com/attila-huszar/fox-ticket/",
       "image": "https://s3.eu-central-1.amazonaws.com/attila.huszar/portfolio/fox-ticket.jpg",
@@ -111,7 +118,7 @@
     {
       "title": "Simple Timer (React)",
       "deploy": "https://simpletimer.pages.dev/",
-      "code": "https://github.com/attila-huszar/countdown-timer",
+      "code": "https://github.com/attila-huszar/countdown-timer/",
       "image": "https://s3.eu-central-1.amazonaws.com/attila.huszar/portfolio/simple-timer.webp",
       "blurHash": "L23[oIax0JogNVfixKa#4,j[?dWB"
     }
