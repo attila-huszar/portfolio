@@ -12,4 +12,4 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e9348356-4134-4652-b33b-62a8074b686e/deploy-status)](https://app.netlify.com/sites/attila-huszar/deploys)
 
-[<img src="https://s3.eu-central-1.amazonaws.com/attila.huszar/portfolio/portfolio.jpg" alt="portfolio site" width="500">](https://attila.pages.dev/)
+[<img src="https://s3.eu-central-1.amazonaws.com/attila.huszar/portfolio/portfolio.webp" alt="portfolio site" width="500">](https://attila.pages.dev/)
