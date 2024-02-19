@@ -1,5 +1,5 @@
 import { useContext, Fragment } from 'react'
-import { DataContext } from '../App'
+import { DataContext } from '../../context/DataProvider'
 import { Box } from '@mui/material'
 import { Terminal } from './Terminal'
 import { PendingFetch } from '../PendingFetch'
@@ -7,6 +7,7 @@ import style from './About.module.scss'
 
 export function About() {
   const data = useContext(DataContext)
+
   const firstName = data?.firstName
     .toLowerCase()
     .normalize('NFD')

@@ -1,11 +1,12 @@
 import { useContext } from 'react'
-import { DataContext } from '../App'
+import { DataContext } from '../../context/DataProvider'
 import { Grid } from '@mui/material'
 import { PortfolioBlock } from './PortfolioBlock'
 import { PendingFetch } from '../PendingFetch'
 
 export function Portfolio() {
   const data = useContext(DataContext)
+
   if (!data) {
     return <PendingFetch />
   }

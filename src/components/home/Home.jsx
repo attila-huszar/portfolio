@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { DataContext } from '../App'
+import { DataContext } from '../../context/DataProvider'
 import { ThemeContext } from '../../context/ThemeContext'
 import { Box } from '@mui/material'
 import selfPortrait from '../../assets/Attila_Huszar_pic_sm-nobg.webp'
@@ -10,8 +10,9 @@ import { PendingFetch } from '../PendingFetch'
 import style from './Home.module.scss'
 
 export function Home() {
-  const { isDarkMode } = useContext(ThemeContext)
   const data = useContext(DataContext)
+  const { isDarkMode } = useContext(ThemeContext)
+
   if (!data) {
     return <PendingFetch />
   }
