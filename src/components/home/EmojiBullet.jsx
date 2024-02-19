@@ -1,6 +1,6 @@
 import { Box } from '@mui/material'
 
-export default function EmojiBullet({ emoji, text, url }) {
+export function EmojiBullet({ emoji, text, url }) {
   return (
     <Box component="li" display="flex" alignItems="center">
       <Box

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { decodeBlurHash } from 'fast-blurhash'
 
-export default function Canvas({ blurHash, width, height }) {
+export function Canvas({ blurHash, width, height }) {
   const canvasRef = useRef(null)
 
   useEffect(() => {

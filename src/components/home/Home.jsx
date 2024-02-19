@@ -1,16 +1,16 @@
 import { useContext } from 'react'
 import { DataContext } from '../App'
+import { ThemeContext } from '../../context/ThemeContext'
+import { Box } from '@mui/material'
 import selfPortrait from '../../assets/Attila_Huszar_pic_sm-nobg.webp'
 import selfPortraitFallBack from '../../assets/Attila_Huszar_pic_sm-nobg.png'
-import { Box } from '@mui/material'
-import { useDarkMode } from 'usehooks-ts'
+import { EmojiBullet } from './EmojiBullet'
+import { SocialIcon } from './SocialIcon'
 import { PendingFetch } from '../PendingFetch'
-import Style from './Home.module.scss'
-import EmojiBullet from './EmojiBullet'
-import SocialIcon from './SocialIcon'
+import style from './Home.module.scss'
 
-export default function Home() {
-  const { isDarkMode } = useDarkMode()
+export function Home() {
+  const { isDarkMode } = useContext(ThemeContext)
   const data = useContext(DataContext)
   if (!data) {
     return <PendingFetch />
@@ -25,7 +25,7 @@ export default function Home() {
       justifyContent="center"
       mt="100px">
       <Box
-        className={Style.shadowed}
+        className={style.shadowed}
         component="img"
         fetchpriority="high"
         src={selfPortrait}
@@ -68,7 +68,7 @@ export default function Home() {
             }}>
             {data.firstName}
           </span>
-          <span className={Style.hand}>🤚</span>
+          <span className={style.hand}>🤚</span>
         </h1>
         <h2>I&apos;m {data.position}</h2>
         <Box component="ul" p="0.8rem">

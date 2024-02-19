@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react'
-import { useDarkMode } from 'usehooks-ts'
+import { useState, useEffect, useContext } from 'react'
+import { ThemeContext } from '../../context/ThemeContext'
 import { Box, Button } from '@mui/material'
-import Style from './PortfolioBlock.module.scss'
-import Canvas from './Canvas'
+import { Canvas } from './Canvas'
 import ChromeIcon from '../../assets/svg/chrome.svg?react'
 import CodeIcon from '../../assets/svg/code.svg?react'
+import style from './PortfolioBlock.module.scss'
 
-export default function PortfolioBlock({
+export function PortfolioBlock({
   image,
   deploy,
   code,
@@ -29,13 +29,13 @@ export default function PortfolioBlock({
     }
   }, [])
 
-  const { isDarkMode } = useDarkMode()
+  const { isDarkMode } = useContext(ThemeContext)
   const theme = isDarkMode ? 'dark' : 'light'
 
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
       <a href={deploy || code} target="_blank" rel="noopener noreferrer">
-        <Box className={`${Style.wrap} ${Style[theme]}`}>
+        <Box className={`${style.wrap} ${style[theme]}`}>
           <Box
             style={{
               width,

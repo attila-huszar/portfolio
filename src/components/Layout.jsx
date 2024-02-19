@@ -1,26 +1,25 @@
+import { useEffect, useContext } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { ThemeContext } from '../context/ThemeContext'
 import { Box, Grid } from '@mui/material'
-import { useDarkMode } from 'usehooks-ts'
-import Style from './Layout.module.scss'
-import ParticlesBg from './particles/ParticlesBg'
-import Navbar from './navbar/Navbar'
-import Home from './home/Home'
-import About from './about/About'
-import Portfolio from './portfolio/Portfolio'
+import { ParticlesBg } from './particles/ParticlesBg'
+import { Navbar } from './navbar/Navbar'
+import { Home } from './home/Home'
+import { About } from './about/About'
+import { Portfolio } from './portfolio/Portfolio'
+import style from './Layout.module.scss'
 import CopyLeft from '../assets/svg/copyleft.svg?react'
 
-export default function Layout() {
-  const { isDarkMode } = useDarkMode()
+export function Layout() {
+  const { isDarkMode } = useContext(ThemeContext)
   const location = useLocation()
 
-  // Google Analytics
   useEffect(() => {
     gtag('event', `page_nav_to_${location.pathname}`)
   }, [location])
 
   return (
-    <Box className={isDarkMode ? Style.dark : Style.light}>
+    <Box className={isDarkMode ? style.dark : style.light}>
       <ParticlesBg darkMode={isDarkMode} />
       <Grid
         container

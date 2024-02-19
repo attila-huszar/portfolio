@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useContext } from 'react'
 import { NavLink } from 'react-router-dom'
-import { useDarkMode } from 'usehooks-ts'
+import { ThemeContext } from '../../context/ThemeContext'
 import { Box } from '@mui/material'
-import Toggler from './Toggler'
-import Style from './Navbar.module.scss'
+import { Toggler } from './Toggler'
+import style from './Navbar.module.scss'
 
 const links = [
   {
@@ -20,8 +20,8 @@ const links = [
   },
 ]
 
-export default function Navbar() {
-  const { isDarkMode } = useDarkMode()
+export function Navbar() {
+  const { isDarkMode } = useContext(ThemeContext)
   const theme = isDarkMode ? 'dark' : 'light'
   const navbarRef = useRef()
   const tabRefs = useRef({})
@@ -59,7 +59,7 @@ export default function Navbar() {
   return (
     <Box
       component="ul"
-      className={`${Style[theme]} ${Style.navbar}`}
+      className={`${style[theme]} ${style.navbar}`}
       ref={navbarRef}
       style={{
         display: 'flex',
@@ -86,7 +86,7 @@ export default function Navbar() {
             to={link.to}
             ref={e => (tabRefs.current[link.name] = e)}
             className={({ isActive }) =>
-              isActive ? `${Style[theme]} ${Style.activeLink}` : ''
+              isActive ? `${style[theme]} ${style.activeLink}` : ''
             }>
             {link.name}
           </NavLink>

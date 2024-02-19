@@ -1,19 +1,19 @@
 import { Box } from '@mui/material'
-import Style from './Terminal.module.scss'
+import style from './Terminal.module.scss'
 
-export default function Terminal({ text }) {
+export function Terminal({ text }) {
   return (
     <Box
       component="section"
-      className={`${Style.terminal} ${Style.shadowed}`}
+      className={`${style.terminal} ${style.shadowed}`}
       width={{ xs: '90%', md: '60%' }}>
       <Box
         backgroundColor="#8c8c8c"
         p="0.4rem"
         borderRadius="0.5rem 0.5rem 0 0">
-        <span className={`${Style.red} ${Style.circle}`}></span>
-        <span className={`${Style.yellow} ${Style.circle}`}></span>
-        <span className={`${Style.green} ${Style.circle}`}></span>
+        <span className={`${style.red} ${style.circle}`}></span>
+        <span className={`${style.yellow} ${style.circle}`}></span>
+        <span className={`${style.green} ${style.circle}`}></span>
       </Box>
       <Box
         backgroundColor="#27242f"

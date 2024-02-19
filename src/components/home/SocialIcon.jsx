@@ -1,6 +1,6 @@
 import Tooltip from '@mui/material/Tooltip'
 
-export default function SocialIcon({ label, link, svgPath, viewBox }) {
+export function SocialIcon({ label, link, svgPath, viewBox }) {
   return (
     <Tooltip title={label} arrow>
       <a

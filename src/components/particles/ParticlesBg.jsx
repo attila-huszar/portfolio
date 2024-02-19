@@ -4,7 +4,7 @@ import { loadSlim } from '@tsparticles/slim'
 //import { loadBasic } from "@tsparticles/basic";
 import { particleBgColors } from './particleBgColors'
 
-export default function ParticlesBg({ darkMode }) {
+export function ParticlesBg({ darkMode }) {
   const [init, setInit] = useState(false)
 
   useEffect(() => {

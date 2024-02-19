@@ -1,11 +1,11 @@
 import { useContext, Fragment } from 'react'
 import { DataContext } from '../App'
 import { Box } from '@mui/material'
-import Style from './About.module.scss'
+import { Terminal } from './Terminal'
 import { PendingFetch } from '../PendingFetch'
-import Terminal from './Terminal'
+import style from './About.module.scss'
 
-export default function About() {
+export function About() {
   const data = useContext(DataContext)
   const firstName = data?.firstName
     .toLowerCase()
@@ -31,7 +31,7 @@ export default function About() {
         </p>
         <p>
           <span style={{ color: data.colorPrimary }}>
-            about <span className={Style.green}>(main) </span>${' '}
+            about <span className={style.green}>(main) </span>${' '}
           </span>
           {data.bio}
         </p>
@@ -54,7 +54,7 @@ export default function About() {
         </p>
         <p>
           <span style={{ color: data.colorPrimary }}>
-            skills <span className={Style.green}>(main)</span> $
+            skills <span className={style.green}>(main)</span> $
           </span>{' '}
           ls
         </p>
@@ -63,7 +63,7 @@ export default function About() {
           return (
             <Fragment key={i}>
               <p style={{ color: data.colorPrimary }}>{skillGroup}</p>
-              <ul className={Style.skills}>
+              <ul className={style.skills}>
                 {data.skills[skillGroup].map((skill, i) => (
                   <li key={i}>{skill}</li>
                 ))}
@@ -90,7 +90,7 @@ export default function About() {
         </p>
         <p>
           <span style={{ color: data.colorPrimary }}>
-            hobbies <span className={Style.green}>(main)</span> $
+            hobbies <span className={style.green}>(main)</span> $
           </span>{' '}
           ls
         </p>

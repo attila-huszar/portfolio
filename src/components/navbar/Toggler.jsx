@@ -1,10 +1,11 @@
-import { useDarkMode } from 'usehooks-ts'
+import { useContext } from 'react'
+import { ThemeContext } from '../../context/ThemeContext'
 import { IconButton } from '@mui/material'
 import iconSun from '../../assets/svg/icon_sun.svg'
 import iconMoon from '../../assets/svg/icon_moon.svg'
 
-export default function Toggler() {
-  const { isDarkMode, toggle } = useDarkMode()
+export function Toggler() {
+  const { isDarkMode, toggleDarkMode } = useContext(ThemeContext)
 
   function themeAnalytics() {
     gtag('event', 'darkmode_toggled', {
@@ -13,7 +14,7 @@ export default function Toggler() {
   }
 
   const handleChange = () => {
-    toggle()
+    toggleDarkMode()
     themeAnalytics()
   }
 
