@@ -13,7 +13,7 @@ export function EmojiBullet({ emoji, text, url }) {
         {emoji}
       </Box>
       {url ? (
-        <a href={url} target={'_blank'} rel="noopener noreferrer">
+        <a href={url} target="_blank" rel="noopener noreferrer">
           {text}
         </a>
       ) : (
