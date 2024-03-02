@@ -1,34 +1,42 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import ParticleComponent, { initParticlesEngine } from '@tsparticles/react'
+import { ThemeContext } from '../../context/ThemeProvider'
 import { loadSlim } from '@tsparticles/slim'
 
-export function Particles({ darkMode }) {
-  const [init, setInit] = useState(false)
+const colors = {
+  light: {
+    background: '#DCD6C8',
+    particles: '#5C7C8A',
+    lines: '#E7B669',
+  },
+  dark: {
+    background: '#0d2538',
+    particles: '#c678dd',
+    lines: '#98c379',
+  },
+}
 
-  const colors = {
-    light: {
-      background: '#DCD6C8',
-      particles: '#5C7C8A',
-      lines: '#E7B669',
-    },
-    dark: {
-      background: '#0d2538',
-      particles: '#c678dd',
-      lines: '#98c379',
-    },
-  }[darkMode ? 'dark' : 'light']
+export function Particles() {
+  const { isDarkMode } = useContext(ThemeContext)
+  const [colorsRef, setColorsRef] = useState(
+    isDarkMode ? colors.dark : colors.light,
+  )
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine)
+    }).then(() => {
+      setColorsRef(isDarkMode ? colors.dark : colors.light)
+    })
+  }, [isDarkMode])
 
   const options = {
     background: {
       color: {
-        value: colors.background,
+        value: colorsRef.background,
       },
     },
     fpsLimit: 60,
-    fullScreen: {
-      enable: true,
-      zIndex: -1,
-    },
     interactivity: {
       detectsOn: 'window',
       events: {
@@ -54,17 +62,17 @@ export function Particles({ darkMode }) {
     },
     particles: {
       color: {
-        value: colors.particles,
+        value: colorsRef.particles,
       },
       links: {
-        color: colors.lines,
+        color: colorsRef.lines,
         distance: 150,
         enable: true,
         opacity: 0.7,
         width: 2,
         triangles: {
           enable: true,
-          color: colors.lines,
+          color: colorsRef.lines,
           opacity: 0.2,
         },
       },
@@ -100,17 +108,5 @@ export function Particles({ darkMode }) {
     detectRetina: true,
   }
 
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine)
-    }).then(() => {
-      setInit(true)
-    })
-  }, [])
-
-  if (init) {
-    return <ParticleComponent id="tsparticles" options={options} />
-  }
-
-  return <></>
+  return <ParticleComponent id="tsparticles" options={options} />
 }

@@ -2,7 +2,6 @@ import { useEffect, useContext } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { ThemeContext } from '../context/ThemeProvider'
 import { Box, Grid } from '@mui/material'
-import { Particles } from './particles/Particles'
 import { Navbar } from './navbar/Navbar'
 import { Home } from './home/Home'
 import { About } from './about/About'
@@ -20,7 +19,6 @@ export function Layout() {
 
   return (
     <Box className={isDarkMode ? style.dark : style.light}>
-      <Particles darkMode={isDarkMode} />
       <Grid
         container
         display="flex"

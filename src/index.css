@@ -78,3 +78,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#tsparticles {
+  position: absolute;
+  z-index: -1;
+}
