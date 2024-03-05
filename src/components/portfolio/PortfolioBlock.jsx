@@ -1,7 +1,7 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useContext } from 'react'
+import { blurhashAsGradients } from 'blurhash-gradients'
 import { ThemeContext } from '../../context/ThemeProvider'
 import { Box, Button } from '@mui/material'
-import { Canvas } from './Canvas'
 import ChromeIcon from '../../assets/svg/chrome.svg?react'
 import CodeIcon from '../../assets/svg/code.svg?react'
 import style from './PortfolioBlock.module.scss'
@@ -15,27 +15,31 @@ export function PortfolioBlock({
   width,
   height,
 }) {
-  const [imageLoaded, setImageLoaded] = useState(() => {
-    const img = new Image()
-    img.src = image
-    return img.complete
-  })
-
-  useEffect(() => {
-    const img = new Image()
-    img.src = image
-    img.onload = () => {
-      setImageLoaded(true)
-    }
-  }, [])
-
   const { isDarkMode } = useContext(ThemeContext)
   const theme = isDarkMode ? 'dark' : 'light'
+  const img = new Image()
+  img.src = image
+  const [imgLoaded, setImgLoaded] = useState(img.complete)
+  img.onload = () => setImgLoaded(true)
+  const cssBlurhash = blurhashAsGradients(blurHash)
 
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
-      <a href={deploy || code} target="_blank" rel="noopener noreferrer">
-        <Box className={`${style.wrap} ${style[theme]}`}>
+      <a
+        href={deploy || code}
+        className={style.link}
+        target="_blank"
+        rel="noopener noreferrer">
+        <Box
+          className={`${style.wrap} ${style[theme]}`}
+          style={{
+            background: isDarkMode
+              ? 'rgba(0, 0, 0, 0.2)'
+              : 'rgba(255, 255, 255, 0.2)',
+            boxShadow: isDarkMode
+              ? 'rgba(0, 0, 0, 0.2) 0 0 10px 0'
+              : 'rgba(33, 35, 38, 0.05) 0 0 10px 0',
+          }}>
           <Box
             style={{
               width,
@@ -46,38 +50,42 @@ export function PortfolioBlock({
               overflow: 'hidden',
               zIndex: -1,
             }}>
-            <Canvas blurHash={blurHash} width={width} height={height} />
+            <Box width={width} height={height} style={cssBlurhash}></Box>
+            <Box
+              component="img"
+              src={image}
+              alt={`Screenshot of ${title}`}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                opacity: imgLoaded ? 1 : 0,
+                width,
+                height,
+                gridRow: 1,
+                gridColumn: 1,
+                borderRadius: '25px',
+                objectFit: 'cover',
+                transition: 'opacity 0.4s ease',
+              }}
+            />
           </Box>
-          <Box
-            component="img"
-            src={image}
-            alt={`Screenshot of ${title}`}
+          <p
             style={{
-              opacity: imageLoaded ? 1 : 0,
-              width,
-              height,
-              gridRow: 1,
-              gridColumn: 1,
-              borderRadius: '25px',
-              objectFit: 'cover',
-              transition: 'opacity 0.4s ease',
-            }}
-          />
+              padding: '0.75rem',
+              fontSize: '1.25rem',
+              textAlign: 'center',
+            }}>
+            {title}
+          </p>
         </Box>
-        <p style={{ textAlign: 'center', fontSize: '1.25rem' }}>{title}</p>
       </a>
-      <Box
-        display="flex"
-        flexDirection="row"
-        gap="1rem"
-        alignItems="center"
-        py="1rem">
+      <Box display="flex" gap="2.5rem">
         {deploy && (
           <Button
             href={deploy}
             target="_blank"
             rel="noopener noreferrer"
-            disableElevation
             variant="outlined"
             color="inherit"
             style={{ borderRadius: '25px' }}
@@ -91,7 +99,6 @@ export function PortfolioBlock({
             href={code}
             target="_blank"
             rel="noopener noreferrer"
-            disableElevation
             variant="outlined"
             color="inherit"
             style={{ borderRadius: '25px' }}

@@ -52,8 +52,8 @@ export function Home() {
             ? 'rgba(0, 0, 0, 0.2)'
             : 'rgba(255, 255, 255, 0.2)',
           boxShadow: isDarkMode
-            ? '0 0 10px 0 rgba(0, 0, 0, 0.2)'
-            : '0 0 10px 0 rgba(255, 255, 255, 0.2)',
+            ? 'rgba(0, 0, 0, 0.2) 0 0 10px 0'
+            : 'rgba(33, 35, 38, 0.05) 0 0 10px 0',
           backdropFilter: 'blur(8px)',
           WebkitBackdropFilter: 'blur(8px)',
           padding: '1rem 2rem',

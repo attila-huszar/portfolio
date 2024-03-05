@@ -36,26 +36,18 @@ export function Particles() {
         value: colorsRef.background,
       },
     },
-    fpsLimit: 60,
+    fpsLimit: 30,
     interactivity: {
       detectsOn: 'window',
       events: {
-        onClick: {
-          enable: true,
-          mode: 'push',
-        },
         onHover: {
           enable: true,
           mode: 'repulse',
         },
-        resize: true,
       },
       modes: {
-        push: {
-          quantity: 1,
-        },
         repulse: {
-          distance: 150,
+          distance: 100,
           duration: 0.4,
         },
       },
@@ -68,7 +60,7 @@ export function Particles() {
         color: colorsRef.lines,
         distance: 150,
         enable: true,
-        opacity: 0.7,
+        opacity: 0.5,
         width: 2,
         triangles: {
           enable: true,
@@ -84,7 +76,7 @@ export function Particles() {
         enable: true,
         outMode: 'bounce',
         random: true,
-        speed: 3,
+        speed: 2,
         straight: false,
       },
       number: {
@@ -92,10 +84,10 @@ export function Particles() {
           enable: true,
           area: 2000,
         },
-        value: 80,
+        value: 50,
       },
       opacity: {
-        value: 0.9,
+        value: 0.5,
       },
       shape: {
         type: 'circle',

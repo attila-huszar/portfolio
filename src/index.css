@@ -7,12 +7,12 @@
 * {
   margin: 0;
   padding: 0;
-  /* scrollbar-width: thin; */
+  scrollbar-width: thin;
 }
 
-/* *::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 8px;
-} */
+}
 
 body {
   height: 100%;
@@ -43,11 +43,7 @@ select {
 }
 
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2 {
   text-wrap: balance;
   overflow-wrap: break-word;
 }
@@ -57,21 +53,12 @@ p {
   hyphens: auto;
 }
 
-a,
-a:link,
-a:hover,
-a:visited,
-a:active {
+a {
   text-decoration: none;
 }
 
 ul {
   list-style-type: none;
-}
-
-#root,
-#__next {
-  isolation: isolate;
 }
 
 code {
@@ -82,4 +69,9 @@ code {
 #tsparticles {
   position: absolute;
   z-index: -1;
+}
+
+.MuiButton-outlined {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }

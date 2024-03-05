@@ -1,11 +1,16 @@
 @import '../../variables.modules';
 
+.link {
+  transition: color 0.4s ease;
+}
+
 .wrap {
   display: grid;
   position: relative;
   margin-bottom: 1rem;
   border-radius: 25px;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .wrap::before {
@@ -17,6 +22,7 @@
   height: 100%;
   width: 100%;
   border-radius: 25px;
+  transition: opacity 0.4s ease;
 }
 
 .dark.wrap::before {
@@ -29,5 +35,4 @@
 
 .wrap:hover::before {
   opacity: 0.15;
-  transition: opacity 0.4s ease;
 }
