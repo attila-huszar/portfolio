@@ -1,37 +1,54 @@
+import eslint from '@eslint/js'
 import react from 'eslint-plugin-react'
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import importX from 'eslint-plugin-import-x'
 import globals from 'globals'
+import prettier from 'eslint-plugin-prettier'
+import prettierConfig from 'eslint-config-prettier'
 
 export default [
-  eslintPluginPrettierRecommended,
+  eslint.configs.recommended,
+  importX.flatConfigs.recommended,
+  react.configs.flat.recommended,
+  prettierConfig,
   {
-    files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
+    files: ['**/*.{js,jsx,mjs,cjs}'],
     plugins: {
-      react,
+      'react-refresh': reactRefresh,
+      prettier: prettier,
     },
     languageOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
       parserOptions: {
+        ecmaVersion: 'latest',
         ecmaFeatures: {
           jsx: true,
         },
       },
       globals: {
         ...globals.browser,
+        gtag: true,
       },
     },
     rules: {
       'react/react-in-jsx-scope': 'off',
-      'react/jsx-uses-react': 'off',
       'react/prop-types': 'off',
+      'import-x/no-unresolved': ['error', { ignore: ['.svg?'] }],
+      'prettier/prettier': 'warn',
     },
   },
   {
     settings: {
+      'import-x/resolver': {
+        node: {
+          extensions: ['.js', '.jsx'],
+        },
+      },
       react: {
         version: 'detect',
       },
+    },
+    linterOptions: {
+      reportUnusedDisableDirectives: 'warn',
     },
   },
   { ignores: ['dist'] },
