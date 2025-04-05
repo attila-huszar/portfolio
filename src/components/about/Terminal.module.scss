@@ -1,4 +1,4 @@
-@import '../../variables.modules';
+@use '../../variables.modules' as *;
 
 .terminal {
   margin-top: 50px;

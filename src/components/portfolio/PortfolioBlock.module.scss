@@ -1,4 +1,4 @@
-@import '../../variables.modules';
+@use '../../variables.modules' as *;
 
 .link {
   transition: color 0.4s ease;
@@ -9,8 +9,8 @@
   position: relative;
   margin-bottom: 1rem;
   border-radius: 25px;
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 .wrap::before {

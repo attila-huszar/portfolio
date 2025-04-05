@@ -1,4 +1,4 @@
-@import '../../variables.modules';
+@use '../../variables.modules' as *;
 
 .dark.activeLink {
   color: $primary;
@@ -15,8 +15,8 @@
   bottom: 0;
   width: var(--_width, 60px);
   height: 2px;
-  translate: var(--_offset);
-  transition: translate 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.27);
+  transform: translateX(var(--_offset));
+  transition: transform 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.27);
 }
 
 .dark.navbar::after {

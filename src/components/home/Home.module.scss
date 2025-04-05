@@ -1,4 +1,4 @@
-@import '../../variables.modules';
+@use '../../variables.modules' as *;
 
 h1 {
   font-size: 2rem;
