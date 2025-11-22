@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom'
-import { DataProvider } from './context/DataProvider'
+import { InfoProvider } from './context/InfoProvider'
 import { ThemeProvider } from './context/ThemeProvider'
 import { Particles } from './components/particles/Particles'
 import { Layout } from './components/Layout'
@@ -7,12 +7,12 @@ import { Layout } from './components/Layout'
 export default function App() {
   return (
     <BrowserRouter>
-      <DataProvider>
+      <InfoProvider>
         <ThemeProvider>
           <Particles />
           <Layout />
         </ThemeProvider>
-      </DataProvider>
+      </InfoProvider>
     </BrowserRouter>
   )
 }

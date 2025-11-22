@@ -1,13 +1,13 @@
 import { useContext } from 'react'
-import { DataContext } from '../../context/DataProvider'
-import { Grid } from '@mui/material'
+import Grid from '@mui/material/Grid'
+import { InfoContext } from '../../context/InfoProvider'
 import { PortfolioBlock } from './PortfolioBlock'
 import { PendingFetch } from '../PendingFetch'
 
 export function Portfolio() {
-  const data = useContext(DataContext)
+  const info = useContext(InfoContext)
 
-  if (!data) {
+  if (!info) {
     return <PendingFetch />
   }
 
@@ -15,13 +15,13 @@ export function Portfolio() {
     <Grid
       container
       maxWidth={800}
-      gap={6}
+      spacing={3}
       marginTop={12}
       marginBottom={4}
       marginX="auto"
       justifyContent="center">
-      {data.portfolio.map((project, i) => (
-        <Grid item xs={12} md={6} key={i}>
+      {info.portfolio.map((project, i) => (
+        <Grid size={{ xs: 12, md: 6 }} key={i}>
           <PortfolioBlock
             title={project.title}
             deploy={project.deploy}

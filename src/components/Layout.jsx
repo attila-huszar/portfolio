@@ -25,10 +25,10 @@ export function Layout() {
         flexDirection="column"
         minHeight="100vh"
         justifyContent="space-between">
-        <Grid item>
+        <Grid>
           <Navbar />
         </Grid>
-        <Grid item>
+        <Grid>
           <Routes>
             <Route index element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -36,7 +36,7 @@ export function Layout() {
             <Route path="/*" element={<Home />} />
           </Routes>
         </Grid>
-        <Grid item>
+        <Grid>
           <Box
             component="footer"
             width="100%"

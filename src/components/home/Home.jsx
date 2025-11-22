@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { DataContext } from '../../context/DataProvider'
+import { InfoContext } from '../../context/InfoProvider'
 import { ThemeContext } from '../../context/ThemeProvider'
 import { Box } from '@mui/material'
 import selfPortrait from '../../assets/Attila_Huszar_pic_sm-nobg.webp'
@@ -10,10 +10,10 @@ import { PendingFetch } from '../PendingFetch'
 import style from './Home.module.scss'
 
 export function Home() {
-  const data = useContext(DataContext)
+  const info = useContext(InfoContext)
   const { isDarkMode } = useContext(ThemeContext)
 
-  if (!data) {
+  if (!info) {
     return <PendingFetch />
   }
 
@@ -28,14 +28,13 @@ export function Home() {
       <Box
         className={style.shadowed}
         component="img"
-        fetchpriority="high"
         src={selfPortrait}
         onError={(e) => (e.currentTarget.src = selfPortraitFallBack)}
         alt="developer portrait"
         style={{
           background: isDarkMode
-            ? data.gradientPrimary
-            : data.gradientSecondary,
+            ? info.gradientPrimary
+            : info.gradientSecondary,
           borderRadius: '50%',
           padding: '0.1rem',
           objectFit: 'cover',
@@ -63,17 +62,17 @@ export function Home() {
           Hi, I&apos;m{' '}
           <span
             style={{
-              background: data.gradientPrimary,
+              background: info.gradientPrimary,
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
             }}>
-            {data.firstName}
+            {info.firstName}
           </span>
           <span className={style.hand}>🤚</span>
         </h1>
-        <h2>I&apos;m {data.position}</h2>
+        <h2>I&apos;m {info.position}</h2>
         <Box component="ul" p="0.8rem">
-          {data.miniBio.map((bio, i) => (
+          {info.miniBio.map((bio, i) => (
             <EmojiBullet
               key={i}
               emoji={bio.emoji}
@@ -87,7 +86,7 @@ export function Home() {
           gap="2rem"
           justifyContent="center"
           fontSize={{ xs: '2rem', md: '2.5rem' }}>
-          {data.socials.map((social, i) => (
+          {info.socials.map((social, i) => (
             <SocialIcon
               key={i}
               label={social.label}

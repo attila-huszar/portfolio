@@ -1,71 +1,69 @@
 import { useContext, Fragment } from 'react'
-import { DataContext } from '../../context/DataProvider'
+import { InfoContext } from '../../context/InfoProvider'
 import { Box } from '@mui/material'
 import { Terminal } from './Terminal'
 import { PendingFetch } from '../PendingFetch'
+import { getNormalizedName } from '../../helpers/getNormalizedName'
 import style from './About.module.scss'
 
 export function About() {
-  const data = useContext(DataContext)
-
-  const firstName = data?.firstName
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-  const lastName = data?.lastName
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
+  const info = useContext(InfoContext)
 
   function aboutMeText() {
-    if (!data) {
+    if (!info) {
       return <PendingFetch />
     }
+
+    const firstName = getNormalizedName(info.firstName)
+    const lastName = getNormalizedName(info.lastName)
 
     return (
       <>
         <p>
-          <span style={{ color: data.colorPrimary }}>
+          <span style={{ color: info.colorPrimary }}>
             {firstName}_{lastName} $
           </span>{' '}
           cat about
         </p>
         <p>
-          <span style={{ color: data.colorPrimary }}>
+          <span style={{ color: info.colorPrimary }}>
             about <span className={style.green}>(main) </span>${' '}
           </span>
-          {data.bio}
+          {info.bio}
         </p>
       </>
     )
   }
 
   function skillsText() {
-    if (!data) {
+    if (!info) {
       return <PendingFetch />
     }
+
+    const firstName = getNormalizedName(info.firstName)
+    const lastName = getNormalizedName(info.lastName)
 
     return (
       <>
         <p>
-          <span style={{ color: data.colorPrimary }}>
+          <span style={{ color: info.colorPrimary }}>
             {firstName}_{lastName} $
           </span>{' '}
           cd skills
         </p>
         <p>
-          <span style={{ color: data.colorPrimary }}>
+          <span style={{ color: info.colorPrimary }}>
             skills <span className={style.green}>(main)</span> $
           </span>{' '}
           ls
         </p>
 
-        {Object.keys(data.skills).map((skillGroup, i) => {
+        {Object.keys(info.skills).map((skillGroup, i) => {
           return (
             <Fragment key={i}>
-              <p style={{ color: data.colorPrimary }}>{skillGroup}</p>
+              <p style={{ color: info.colorPrimary }}>{skillGroup}</p>
               <ul className={style.skills}>
-                {data.skills[skillGroup].map((skill, i) => (
+                {info.skills[skillGroup].map((skill, i) => (
                   <li key={i}>{skill}</li>
                 ))}
               </ul>
@@ -77,26 +75,29 @@ export function About() {
   }
 
   function miscText() {
-    if (!data) {
+    if (!info) {
       return <PendingFetch />
     }
+
+    const firstName = getNormalizedName(info.firstName)
+    const lastName = getNormalizedName(info.lastName)
 
     return (
       <>
         <p>
-          <span style={{ color: data.colorPrimary }}>
+          <span style={{ color: info.colorPrimary }}>
             {firstName}_{lastName} $
           </span>{' '}
           cd hobbies
         </p>
         <p>
-          <span style={{ color: data.colorPrimary }}>
+          <span style={{ color: info.colorPrimary }}>
             hobbies <span className={style.green}>(main)</span> $
           </span>{' '}
           ls
         </p>
         <ul>
-          {data.hobbies.map((hobby, i) => (
+          {info.hobbies.map((hobby, i) => (
             <li key={i}>
               {hobby.emoji} {hobby.label}
             </li>
