@@ -4,6 +4,6 @@ export async function fetchPortfolioInfo() {
     const result = await response.json()
     return result
   } catch (error) {
-    throw new Error(error)
+    throw new Error('Failed to fetch portfolio info', { cause: error })
   }
 }

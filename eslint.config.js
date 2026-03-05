@@ -1,19 +1,18 @@
-import eslint from '@eslint/js'
-import react from 'eslint-plugin-react'
+import { defineConfig } from 'eslint/config'
+import js from '@eslint/js'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import globals from 'globals'
 import prettier from 'eslint-plugin-prettier'
 import prettierConfig from 'eslint-config-prettier'
 
-export default [
-  eslint.configs.recommended,
-  react.configs.flat.recommended,
+export default defineConfig([
+  js.configs.recommended,
   prettierConfig,
   {
     files: ['**/*.{js,jsx,mjs,cjs}'],
     plugins: {
       'react-refresh': reactRefresh,
-      prettier: prettier,
+      prettier,
     },
     languageOptions: {
       parserOptions: {
@@ -28,20 +27,20 @@ export default [
       },
     },
     rules: {
-      'react/react-in-jsx-scope': 'off',
-      'react/prop-types': 'off',
+      'react-refresh/only-export-components': [
+        'warn',
+        {
+          allowConstantExport: true,
+          allowExportNames: ['InfoContext', 'ThemeContext'],
+        },
+      ],
       'prettier/prettier': 'warn',
     },
   },
   {
-    settings: {
-      react: {
-        version: 'detect',
-      },
-    },
     linterOptions: {
       reportUnusedDisableDirectives: 'warn',
     },
   },
   { ignores: ['dist'] },
-]
+])
