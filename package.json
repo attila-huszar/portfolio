@@ -33,6 +33,7 @@
     "start": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "echo \"No test specified\" && exit 0"
   }
 }

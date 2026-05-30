@@ -1,25 +1,34 @@
 name: CI
+
 on:
   workflow_dispatch:
   push:
     branches: [master]
   pull_request:
-    # The branches below must be a subset of the branches above
     branches: [master]
+
+permissions:
+  contents: read
+
 jobs:
-  CI:
+  ci:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Check out repository code
+      - name: Checkout code
         uses: actions/checkout@v4
-      - name: Setup node
+
+      - name: Setup Node.js LTS
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: lts/*
           cache: npm
+
       - name: Install dependencies
-        run: npm clean-install
+        run: npm ci
+
       - name: Lint
         run: npm run lint
-#      - name: Test
-#        run: npm run test
+
+      - name: Test
+        run: npm run test
