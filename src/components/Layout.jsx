@@ -1,5 +1,5 @@
-import { useEffect, useContext } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { useContext } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import { ThemeContext } from '../context/ThemeProvider'
 import { Box } from '@mui/material'
 import { Navbar } from './navbar/Navbar'
@@ -11,11 +11,6 @@ import CopyLeft from '../assets/svg/copyleft.svg?react'
 
 export function Layout() {
   const { isDarkMode } = useContext(ThemeContext)
-  const location = useLocation()
-
-  useEffect(() => {
-    gtag('event', `page_nav_to_${location.pathname}`)
-  }, [location])
 
   return (
     <Box
