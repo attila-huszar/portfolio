@@ -20,11 +20,14 @@ export function Home() {
   return (
     <Box
       component="section"
-      display="flex"
-      flexDirection={{ xs: 'column', md: 'row' }}
-      alignItems="center"
-      justifyContent="center"
-      mt="100px">
+      sx={{
+        display: 'flex',
+        flexDirection: { xs: 'column', md: 'row' },
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: { md: 'calc(100vh - 75px)' },
+        mt: { xs: '100px', md: 0 },
+      }}>
       <Box
         className={style.shadowed}
         component="img"
@@ -39,10 +42,12 @@ export function Home() {
           padding: '0.1rem',
           objectFit: 'cover',
         }}
-        width={{ xs: '320px', md: '375px' }}
-        height={{ xs: '320px', md: '375px' }}
-        mr={{ xs: 0, md: '50px' }}
-        mb={{ xs: '50px', md: 0 }}
+        sx={{
+          width: { xs: '320px', md: '375px' },
+          height: { xs: '320px', md: '375px' },
+          mr: { xs: 0, md: '50px' },
+          mb: { xs: '50px', md: 0 },
+        }}
       />
       <Box
         style={{
@@ -71,7 +76,7 @@ export function Home() {
           <span className={style.hand}>🤚</span>
         </h1>
         <h2>I&apos;m {info.position}</h2>
-        <Box component="ul" p="0.8rem">
+        <Box component="ul" sx={{ p: '0.8rem' }}>
           {info.miniBio.map((bio, i) => (
             <EmojiBullet
               key={i}
@@ -82,10 +87,12 @@ export function Home() {
           ))}
         </Box>
         <Box
-          display="flex"
-          gap="2rem"
-          justifyContent="center"
-          fontSize={{ xs: '2rem', md: '2.5rem' }}>
+          sx={{
+            display: 'flex',
+            gap: '2rem',
+            justifyContent: 'center',
+            fontSize: { xs: '2rem', md: '2.5rem' },
+          }}>
           {info.socials.map((social, i) => (
             <SocialIcon
               key={i}

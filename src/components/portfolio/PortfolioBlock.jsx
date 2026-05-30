@@ -24,7 +24,8 @@ export function PortfolioBlock({
   const cssBlurhash = blurhashAsGradients(blurHash)
 
   return (
-    <Box display="flex" flexDirection="column" alignItems="center">
+    <Box
+      sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <a
         href={deploy || code}
         className={style.link}
@@ -50,7 +51,7 @@ export function PortfolioBlock({
               overflow: 'hidden',
               zIndex: -1,
             }}>
-            <Box width={width} height={height} style={cssBlurhash}></Box>
+            <Box sx={{ width, height }} style={cssBlurhash}></Box>
             <Box
               component="img"
               src={image}
@@ -80,7 +81,7 @@ export function PortfolioBlock({
           </p>
         </Box>
       </a>
-      <Box display="flex" gap="2.5rem">
+      <Box sx={{ display: 'flex', gap: '2.5rem' }}>
         {deploy && (
           <Button
             href={deploy}

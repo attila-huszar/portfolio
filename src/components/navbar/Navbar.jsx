@@ -62,11 +62,6 @@ export function Navbar() {
       className={`${style[theme]} ${style.navbar}`}
       ref={navbarRef}
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100vw',
-        height: '60px',
         position: 'fixed',
         top: '0',
         zIndex: 1,
@@ -79,7 +74,14 @@ export function Navbar() {
           ? 'rgba(0, 0, 0, 0.2)'
           : 'rgba(235, 232, 224, 0.6)',
       }}
-      gap={{ xs: '2rem', md: '8rem' }}>
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100vw',
+        height: '60px',
+        gap: { xs: '2rem', md: '8rem' },
+      }}>
       {links.map((link, i) => (
         <li key={i}>
           <NavLink

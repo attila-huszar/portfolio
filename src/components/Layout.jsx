@@ -1,7 +1,7 @@
 import { useEffect, useContext } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { ThemeContext } from '../context/ThemeProvider'
-import { Box, Grid } from '@mui/material'
+import { Box } from '@mui/material'
 import { Navbar } from './navbar/Navbar'
 import { Home } from './home/Home'
 import { About } from './about/About'
@@ -18,39 +18,34 @@ export function Layout() {
   }, [location])
 
   return (
-    <Box className={isDarkMode ? style.dark : style.light}>
-      <Grid
-        container
-        display="flex"
-        flexDirection="column"
-        minHeight="100vh"
-        justifyContent="space-between">
-        <Grid>
-          <Navbar />
-        </Grid>
-        <Grid>
-          <Routes>
-            <Route index element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/*" element={<Home />} />
-          </Routes>
-        </Grid>
-        <Grid>
-          <Box
-            component="footer"
-            width="100%"
-            height="75px"
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            style={{ opacity: 0.7, gap: '0.5rem', cursor: 'default' }}>
-            {'Attila Huszár'}
-            <CopyLeft />
-            {new Date().getFullYear()}
-          </Box>
-        </Grid>
-      </Grid>
+    <Box
+      className={isDarkMode ? style.dark : style.light}
+      sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <Navbar />
+      <Box component="main" sx={{ flex: 1 }}>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/*" element={<Home />} />
+        </Routes>
+      </Box>
+      <Box
+        component="footer"
+        sx={{
+          width: '100%',
+          height: '75px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          opacity: 0.7,
+          gap: '0.5rem',
+          cursor: 'default',
+        }}>
+        Attila Huszár
+        <CopyLeft />
+        {new Date().getFullYear()}
+      </Box>
     </Box>
   )
 }

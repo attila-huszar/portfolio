@@ -14,12 +14,14 @@ export function Portfolio() {
   return (
     <Grid
       container
-      maxWidth={800}
       spacing={3}
-      marginTop={12}
-      marginBottom={4}
-      marginX="auto"
-      justifyContent="center">
+      sx={{
+        justifyContent: 'center',
+        maxWidth: 800,
+        mt: 12,
+        mb: 4,
+        mx: 'auto',
+      }}>
       {info.portfolio.map((project, i) => (
         <Grid size={{ xs: 12, md: 6 }} key={i}>
           <PortfolioBlock
