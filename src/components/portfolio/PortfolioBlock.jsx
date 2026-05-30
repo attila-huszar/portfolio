@@ -15,8 +15,7 @@ export function PortfolioBlock({
   width,
   height,
 }) {
-  const { isDarkMode } = useContext(ThemeContext)
-  const theme = isDarkMode ? 'dark' : 'light'
+  const { isDarkMode, theme } = useContext(ThemeContext)
   const img = new Image()
   img.src = image
   const [imgLoaded, setImgLoaded] = useState(img.complete)

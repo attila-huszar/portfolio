@@ -1,6 +1,7 @@
-import { useState, useEffect, useRef, useContext } from 'react'
-import { NavLink } from 'react-router-dom'
+import { useContext } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
 import { ThemeContext } from '../../context/ThemeProvider'
+import { useNavIndicator } from '../../hooks/useNavIndicator'
 import { Box } from '@mui/material'
 import { Toggler } from './Toggler'
 import style from './Navbar.module.scss'
@@ -21,40 +22,9 @@ const links = [
 ]
 
 export function Navbar() {
-  const { isDarkMode } = useContext(ThemeContext)
-  const theme = isDarkMode ? 'dark' : 'light'
-  const navbarRef = useRef()
-  const tabRefs = useRef({})
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-
-  useEffect(() => {
-    if (tabRefs.current['home'] && navbarRef.current) {
-      const firstTabOffset = tabRefs.current['home'].offsetLeft
-      navbarRef.current.style.setProperty('--_left', firstTabOffset + 'px')
-
-      for (const ref in tabRefs.current) {
-        const tabRef = tabRefs.current[ref]
-
-        if (tabRef.className.includes('activeLink')) {
-          navbarRef.current.style.setProperty(
-            '--_offset',
-            tabRef.offsetLeft - firstTabOffset + 'px',
-          )
-          navbarRef.current.style.setProperty(
-            '--_width',
-            tabRef.offsetWidth + 'px',
-          )
-        }
-      }
-    }
-  }, [Object.keys(tabRefs.current), windowWidth])
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth)
-    }
-    window.addEventListener('resize', handleResize)
-  })
+  const { pathname } = useLocation()
+  const { navbarRef, tabRefs } = useNavIndicator(links, pathname)
+  const { isDarkMode, theme } = useContext(ThemeContext)
 
   return (
     <Box

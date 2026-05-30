@@ -10,11 +10,11 @@ import style from './Layout.module.scss'
 import CopyLeft from '../assets/svg/copyleft.svg?react'
 
 export function Layout() {
-  const { isDarkMode } = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext)
 
   return (
     <Box
-      className={isDarkMode ? style.dark : style.light}
+      className={style[theme]}
       sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Navbar />
       <Box component="main" sx={{ flex: 1 }}>
